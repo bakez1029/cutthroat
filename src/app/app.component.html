@@ -1,9 +1,115 @@
-<h1>
-  {{title}}
-</h1>
+<div class="PC">
 
-<ul *ngFor="let item of items | async">
-  <li class="text">
-    {{item.$value}}
-  </li>
-</ul>
+  <div id="MENUSIDE">
+
+    <div id="MENUSIDEindent">
+
+      <span><img src="./img/logo2.png"></span>
+
+      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/']"><i class="fa fa-home fa-fw"></i> Home</a></span></span>
+      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/products']"><i class="fa fa-flask fa-fw"></i> Products</a></span></span>
+      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/barbers']"><i class="fa fa-user-secret fa-fw"></i> Barbers</a></span></span>
+      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/services']"><i class="fa fa-hand-scissors-o fa-fw"></i> Services</a></span></span>
+      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/contact']"><i class="fa fa-mobile-phone fa-fw"></i> Contact</a></span></span>
+      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/testimonials']"><i class="fa fa-thumbs-up fa-fw"></i> Testimonials</a></span></span>
+      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/photos']"><i class="fa fa-picture-o fa-fw"></i> Photos</a></span></span>
+      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/jobs']"><i class="fa fa-briefcase fa-fw"></i> Jobs</a></span></span>
+      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/artists']"><i class="fa fa-paint-brush fa-fw"></i> Artists</a></span></span>
+
+    </div>
+
+  </div>
+
+  <div id="CONTENTSIDE">
+
+    <div id="CONTENTSIDEindent">
+
+      <nav class="navbar navbar-default navbar-static-top visible-xs">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header" style="padding-left: 5px; padding-top: 10px; padding-right:25px">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+              aria-expanded="false" style="float:left">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="btn btn-default" style="float:right"><img src="./img/dollars37.png" style="height: 25px; width:25px"></a>
+          </div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="visible-xs"><a [routerLink]="['/']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Home</a><span class="sr-only">(current)</span></li>
+            <li class="visible-xs"><a [routerLink]="['/products']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Products</a></li>
+            <li class="visible-xs"><a [routerLink]="['/barbers']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Barbers</a></li>
+            <li class="visible-xs"><a [routerLink]="['/services']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Services</a></li>
+            <li class="visible-xs"><a [routerLink]="['/contact']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Contact</a></li>
+            <li class="visible-xs"><a [routerLink]="['/testimonials']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Testimonials</a></li>
+            <li class="visible-xs"><a [routerLink]="['/photos']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Photos</a></li>
+            <li class="visible-xs"><a [routerLink]="['/jobs']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Jobs</a></li>
+            <li class="visible-xs"><a [routerLink]="['/artists']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Artists</a></li>
+          </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+
+      </nav>
+
+
+      <div class="ContentSideSections" id="PFTopLinksCover" style="height: 191px;">
+
+
+<!--IF AUTHED OR ADMIN-->
+<button (click)="logout()">logout</button>
+        <div *ngIf="authed" style="color: #fff">
+          <br>
+          <div class="badge" style="float:right; margin-right:25px; color: #98AFC7">&nbsp;XXXXXXXXXXXXXXXXXXXXXX[{{ user }}]{{poop}}</div>
+          <br>
+          <div class="dropdown" style="float:right">
+                <a data-target="#" [routerLink]="['/']"  data-toggle="dropdown" class="dropdown-toggle"><img src="{{ (user | async)?.profilepic }}" style="width: 128px; height: 128px; padding:15px; float:right" class="img-circle"></a>
+                <ul class="dropdown-menu">
+                  <li><a [routerLink]="['/']"><i class="fa fa-home fa-fw"></i> Home</a></li>
+                  <li><a [routerLink]="['/settings']"><i class="fa fa-cogs fa-fw"></i> Settings</a></li>
+                  <li><a [routerLink]="['/cart']"><i class="fa fa-shopping-basket fa-fw"></i> Cart</a></li>
+                  <li *ngIf="authed && uid === me || authed && uid === mike" class="divider"></li>
+                  <li *ngIf="authed && uid === me || authed && uid === mike"><a [routerLink]="['/admin']"><i class="fa fa-dashboard fa-fw"></i> Admin</a></li>
+                  <li class="divider"></li>
+                  <li><a (click)="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                </ul>
+              </div>
+        </div>
+<!--NOT AUTHED-->
+        <div *ngIf="!authed" style="color: #98AFC7">
+          <!--<div style="padding-bottom: 5px; margin-right:30px">Login <i class="fa fa-level-down"></i></div>-->
+          <br>
+          <div style="float:right"><a [routerLink]="['/login']"><img src="./img/user2.png" style="width: 140px; height: 128px; padding-top:15px; padding-bottom:15px float:right" class="img-circle"></a></div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="ContentSideSections">
+    <span class="floatLeft fontSize14"><a href="http://www.cutthroatbarbers.com">Cutthroat Barbershop</a>, © 2016</span>
+    <span class="floatRight fontSize14">All rights reserved</span>
+    <div style="clear: both;"></div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+$(".dropdown-toggle").dropdown('toggle');
+
+});  
+
+</script>

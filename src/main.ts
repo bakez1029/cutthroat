@@ -1,8 +1,8 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
 import { AppComponent, environment } from './app/';
-//import {ROUTER_PROVIDERS} from 'angular2/router';
-import {FIREBASE_PROVIDERS, defaultFirebase, AngularFire} from 'angularfire2';
+import {FIREBASE_PROVIDERS, defaultFirebase, AngularFire, firebaseAuthConfig, AuthProviders, AuthMethods} from 'angularfire2';
+import { appRouterProviders } from './app/';
 
 if (environment.production) {
   enableProdMode();
@@ -10,11 +10,16 @@ if (environment.production) {
 
 bootstrap(AppComponent, [
   FIREBASE_PROVIDERS,
+  appRouterProviders,
   defaultFirebase({
-    apiKey: "AIzaSyBbIOViJ7XVwF61kTUC-A6IggYMhaBH9Kg",
-    authDomain: "jefftestproject-4f82d.firebaseapp.com",
-    databaseURL: "https://jefftestproject-4f82d.firebaseio.com",
-    storageBucket: "jefftestproject-4f82d.appspot.com",
-  })
+    apiKey: "AIzaSyCnEW-TiTxpDbiaoyEx-EtfNDH3W8p5prc",
+    authDomain: "project-3685012128358143188.firebaseapp.com",
+    databaseURL: "https://project-3685012128358143188.firebaseio.com",
+    storageBucket: "project-3685012128358143188.appspot.com",
+  }),
+    firebaseAuthConfig({
+     provider: AuthProviders.Password,
+     method: AuthMethods.Password,
+    })
 ]);
 

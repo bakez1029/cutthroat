@@ -1,0 +1,65 @@
+<div>
+    <div class="ContentSideSections overHidden">
+        <div class="Content100 floatLeft overHidden TextShadow">
+            <br>
+            <br>
+            <br>
+
+
+            <center>
+                <div class="container">
+                    <div class="z-depth-1 white lighten-4 row" style="display: inline-block; padding: 32px 48px 30px 48px; border: 1px solid #EEE;">
+                        <center>
+                            <img class="responsive-img" style="width: 250px;" src="./img/logo2.png" />
+                            <br>
+                            <br>
+                            <h5 class="red-darken-4-text">Please enter your email address.</h5>
+                            <br>
+                            <br>
+                            <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm.value)">
+                                <div class="form-group">
+                                    <br>
+                                    <input type="text" class="form-control" ngControl="email" #email="ngForm" required>
+                                    <div class="alert alert-danger" [hidden]="email.valid || email.pristine">Email is required</div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <button type="submit" (click)="resetPassword(email.value)" [disabled]="!jobForm.form.valid" class='col s12 mat-btn mat-btn-large waves-effect light-blue lighten-2'>Reset Password</button>
+
+
+                            </form>
+                            <br>
+
+                        </center>
+                    </div>
+                </div>
+            </center>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </div>
+    </div>
+</div>

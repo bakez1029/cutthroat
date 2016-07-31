@@ -1,0 +1,367 @@
+<style>
+  body {
+    /*display: flex;
+    min-height: 100vh;
+    flex-direction: column;*/
+  }
+  
+  main {
+    /*flex: 1 0 auto;
+    */
+  }
+  
+  body {
+    background: #fff;
+  }
+  
+  .input-field input[type=date]:focus + label,
+  .input-field input[type=text]:focus + label,
+  .input-field input[type=email]:focus + label,
+  .input-field input[type=password]:focus + label {
+    color: #Db2226;
+  }
+  
+  .input-field input[type=date]:focus,
+  .input-field input[type=text]:focus,
+  .input-field input[type=email]:focus,
+  .input-field input[type=password]:focus {
+    border-bottom: 2px solid #DB2226;
+    box-shadow: none;
+  }
+</style>
+
+<div>
+  <div class="ContentSideSections overHidden">
+    <div class="Content100 floatLeft overHidden TextShadow">
+      <br>
+      <br>
+      <br>
+             
+  
+      <div class="section"></div>
+
+      
+        <center><img class="responsive-img" style="width: 250px;" src="./img/logo2.png" />
+
+        <br>
+        <h2 class="red-darken-4-text">Profile Settings & Information</h2></center>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class='col s6'>
+
+
+          <div class="z-depth-1 white lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; width:550px; border: 1px solid #EEE;">
+
+
+            <center><h4>Update Profile Information</h4></center>
+            <br>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #newprofilepic />
+                <label for='email'>Profile Picture</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #newname />
+                <label for='name'>Name</label>
+              </div>
+            </div>
+
+            <!--<div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #s_email />
+                <label for='email'>E-mail</label>
+              </div>
+            </div>-->
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #newphone />
+                <label for='phone'>Phone Number</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #newAddress />
+                <label for='address'>Address</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #newCity />
+                <label for='email'>City</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #newZip/>
+                <label for='zip'>Zip</label>
+              </div>
+               </div>
+
+              <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #newState />
+                <label for='dob'>State</label>
+              </div>
+           
+          
+              <br>
+              <br>
+              <br>
+              <br>
+               <!--<div class='row'>
+              <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" #s_userpic>
+        <label for='userpic'>Add a Profile Pic</label>
+      </div>
+    </div>-->
+<!--</div>
+                -->
+              <!--<label style='float: right;'>
+								<a class='blue-text' href='#!'><b>Remember me</b></a>
+							</label>-->
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button (click)="update(newname.value, newphone.value, newprofilepic.value, newAddress.value, newCity.value, newState.value, newZip.value)"
+                  class='col s12 mat-btn mat-btn-large waves-effect light-blue lighten-2'>Update</button>
+              </div>
+            </center>
+
+          
+        </div>
+        </div>
+ 
+
+
+  
+<div class='col s6'>
+  <div class="z-depth-1 white lighten-4 row" style="display: inline-block; padding: 32px 48px 20px 48px; width:550px; border: 1px solid #EEE;">
+
+    <h4><center>Account Settings</center></h4>
+    <br>
+    <br>
+<button (click)="resetPassword()" class='col s12 mat-btn mat-btn-large waves-effect light-blue lighten-2' style="float:right">Change Password</button>
+</div>
+</div>
+
+
+  <div class='col s6'>
+  <div class="z-depth-1 white lighten-4 row" style="display: inline-block; padding: 32px 48px 60px 48px; width:550px; border: 1px solid #EEE;">
+
+    <h4><center>Current Profile Information</center></h4>
+    <br>
+    <br>
+    
+    <div class='row'>
+      <div class='col s12'>
+        <b>Name:</b>&nbsp;{{ (user | async)?.name }}
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <div class='row'>
+      <div class='col s12'>
+        <b>Phone:</b>&nbsp;{{ (user | async)?.phone }}
+      </div>
+    </div>
+
+    <!--<br>
+    <br>
+    <div class='row'>
+      <div class='col s12'>
+        Picture:&nbsp;{{ (user | async)?.profilepic }}
+      </div>
+    </div>-->
+
+
+    <br>
+    <br>
+    <div class='row'>
+      <div class='col s12'>
+        <b>Address:</b>&nbsp;{{ (address | async)?.address }}
+      </div>
+    </div>
+
+
+    <br>
+    <br>
+    <div class='row'>
+      <div class='col s12'>
+        <b>City:</b>&nbsp;{{ (address | async)?.city}}
+      </div>
+    </div>
+
+
+    <br>
+    <br>
+
+    <div class='row'>
+      <div class='col s12'>
+        <b>Zip:</b>&nbsp;{{ (address | async)?.zip }}
+      </div>
+    </div>
+    <br>
+    <br>
+    
+    <div class='row'>
+      <div class='col s12'>
+        <b>State:</b>&nbsp;{{ (address | async)?.state }}
+      </div>
+    </div>
+    <br>
+    <br>
+    
+</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</div>
+
+   
+<!--
+      <center>
+        <h5 class="red-darken-4-text">Billing Information</h5>
+        <div class="section"></div>
+
+        <div class="container">
+          <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; width:550px; border: 1px solid #EEE;">
+
+
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #s_cc />
+                <label for='cc'>Enter Card Number</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #s_expirationDate />
+                <label for='b_expirationDate'>Enter Expiration Date</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #s_securityCode />
+                <label for='securityCode'>Enter Security Code</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #s_b_address />
+                <label for='b_address'>Enter Billing Address</label>
+              </div>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button (click)="login(email.value, password.value)" class='col s12 mat-btn mat-btn-large waves-effect orange lighten-1'>Update</button>
+              </div>
+            </center>
+
+          </div>
+        </div>
+      </center>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <center>
+        <h5 class="red-darken-4-text">Change Your Password</h5>
+        <div class="section"></div>
+
+        <div class="container">
+          <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; width:550px; border: 1px solid #EEE;">
+
+
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #s_cc />
+                <label for='cc'>Old Password</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #s_expirationDate />
+                <label for='b_expirationDate'>New Password</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' #s_securityCode />
+                <label for='securityCode'>Confirm Password</label>
+              </div>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button (click)="login(email.value, password.value)" class='col s12 mat-btn mat-btn-large waves-effect purple accent-2'>Update</button>
+
+              </div>
+            </center>
+
+          </div>
+        </div>
+      </center>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br> <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>-->
+
+
+
+    </div>
+  </div>
+</div>
