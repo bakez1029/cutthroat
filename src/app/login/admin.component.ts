@@ -17,23 +17,70 @@ declare var firebase: any;
 })
 
 export class AdminComponent {
-user: FirebaseObjectObservable<any>;
-    address: FirebaseObjectObservable<any>;
-    form:FirebaseObjectObservable<any>;
 
-    constructor(public af: AngularFire,
-        private router: Router
-    ) {
-      
-this.af.database.list('/forms').subscribe((_forms) => {
-    console.log(_forms[0].ApplicantInfo)
-    this.form = this.af.database.object('/forms/' + _forms[1].$key.ApplicantInfo)
-        console.log(this.form)
-  
-})
+    firebaseAuth: AngularFireAuth;
+    user: any; // FirebaseObjectObservable<any>;
+    address: FirebaseObjectObservable<any>;
+    uid: string;
+    authed: boolean = true;
+    me: string;
+    mike: string;
+    name: string;
+    email: string;
+    profilepic: string;
+    poop: string;
+    username: string;
+    users: any;
+    submitted: boolean = false; 
+    forms: any;
+    form: FirebaseObjectObservable<any>;
+    form2: FirebaseObjectObservable<any>;
+
+    constructor(public af: AngularFire, public AngularFire: AngularFire, private _router: Router) {
+
+
+        this.af.database.list('/forms').subscribe((forms) => {
+            this.forms = forms;
+        });
+
+
+        this.af.auth.subscribe((auth) => {
+
+            console.log(auth, "called");
+            if (auth == null || (auth == null && auth.uid == null)) {
+                console.log('logged out');
+                this.authed = false;
+                this.user = null;
+                this.poop = 'LOGGED OUT';
+
+                //console.log('User is not logged in!')
+            }
+            else {
+                console.log('logged in');
+                this.authed = true;
+                this.uid = auth.uid;
+                if (this.forms == null) {
+                    this.af.database.list('/forms').subscribe((forms) => {
+                        this.forms= forms;
+                        this.setUsers(auth);
+                    });
+                }
+                else {
+                    this.setUsers(auth);
+                }
+            }
+        });
+    }
+
+    setUsers(auth: any) {
+    this.form = this.af.database.object('/forms/' + this.forms[0].$key + '/ApplicantInfo')
+    this.form2 = this.af.database.object('/forms/' + this.forms[1].$key + '/ApplicantInfo')
+       
+
+
 
   }
- 
+    
     public logout() {
         this.af.auth.logout()
     }
@@ -46,3 +93,4 @@ this.af.database.list('/forms').subscribe((_forms) => {
 
 
 }
+

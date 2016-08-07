@@ -12,7 +12,7 @@
       <div class='col s6'>
     <div class="z-depth-1 white lighten-4 row" style="display: inline-block; padding: 32px 48px 60px 48px; width:550px; border: 1px solid #EEE;">
 
-    <h4><center>Applicant Information</center></h4>
+    <h4><center>Applicant 1</center></h4>
     <br>
     <br>
     
@@ -34,7 +34,7 @@
     <br>
     <div class='row'>
       <div class='col s12'>
-        <b>Picture:</b>&nbsp;{{ (user | async)?.phone }}
+        <b>Picture:</b>&nbsp;{{ (form | async)?.phone }}
       </div>
     </div>
 
@@ -60,17 +60,17 @@
     <br>
     <br>
 
-    <div class='row'>
+    <!--<div class='row'>
       <div class='col s12'>
         <b>Zip:</b>&nbsp;{{ (form | async)?.zip }}
       </div>
     </div>
     <br>
-    <br>
+    <br>-->
     
     <div class='row'>
       <div class='col s12'>
-        <b>State:</b>&nbsp;{{ (form| async)?.state }}
+        <b>State:</b>&nbsp;{{ (form | async)?.state }}
       </div>
     </div>
     <br>
@@ -81,13 +81,13 @@
     <div class='col s6'>
     <div class="z-depth-1 white lighten-4 row" style="display: inline-block; padding: 32px 48px 60px 48px; width:550px; border: 1px solid #EEE;">
 
-    <h4><center>Help Request</center></h4>
+    <h4><center>Applicant 2</center></h4>
     <br>
     <br>
     
     <div class='row'>
       <div class='col s12'>
-        <b>Name:</b>&nbsp;{{ (user | async)?.name }}
+        <b>Name:</b>&nbsp;{{ (form2 | async)?.name }}
       </div>
     </div>
 
@@ -95,7 +95,7 @@
     <br>
     <div class='row'>
       <div class='col s12'>
-        <b>Phone:</b>&nbsp;{{ (user | async)?.phone }}
+        <b>Email:</b>&nbsp;{{ (form2 | async)?.email }}
       </div>
     </div>
 
@@ -112,7 +112,7 @@
     <br>
     <div class='row'>
       <div class='col s12'>
-        <b>Address:</b>&nbsp;{{ (address | async)?.address }}
+        <b>Phone:</b>&nbsp;{{ (form2 | async)?.phone }}
       </div>
     </div>
 
@@ -121,7 +121,7 @@
     <br>
     <div class='row'>
       <div class='col s12'>
-        <b>City:</b>&nbsp;{{ (address | async)?.city}}
+        <b>Address:</b>&nbsp;{{ (form2 | async)?.address}}
       </div>
     </div>
 
@@ -131,7 +131,7 @@
 
     <div class='row'>
       <div class='col s12'>
-        <b>Zip:</b>&nbsp;{{ (address | async)?.zip }}
+        <b>City:</b>&nbsp;{{ (form2 | async)?.city }}
       </div>
     </div>
     <br>
@@ -139,7 +139,7 @@
     
     <div class='row'>
       <div class='col s12'>
-        <b>State:</b>&nbsp;{{ (address | async)?.state }}
+        <b>State:</b>&nbsp;{{ (form2 | async)?.state }}
       </div>
     </div>
     <br>

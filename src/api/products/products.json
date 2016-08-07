@@ -1,6 +1,6 @@
 [
     {
-        "productId": 1,
+        "productId": 0,
         "productBrand": "JS Sloane",
         "productName": "Mediumweight Pomade",
         "productCode": "GDN-0011",
@@ -11,7 +11,7 @@
         "imageUrl": "./img/JS-MED-2.png"
     },
     {
-        "productId": 2,
+        "productId": 1,
         "productBrand": "JS Sloane",
         "productName": "Heavyweight Pomade",
         "productCode": "GDN-0023",
@@ -22,7 +22,7 @@
         "imageUrl": "./img/js.jpg"
     },
     {
-        "productId": 3,
+        "productId": 2,
         "productBrand": "JS Sloane",
         "productName": "Caviar Clay",
         "productCode": "TBX-0048",
@@ -33,7 +33,7 @@
         "imageUrl": "./img/JS-CAV.jpg"
     },
     {
-        "productId": 4,
+        "productId": 3,
         "productBrand": "JS Sloane",
         "productName": "Gentlemen's Shampoo",
         "productCode": "TBX-0022",
@@ -44,7 +44,7 @@
         "imageUrl": "./img/JS-sham.jpg"
     },
     {
-        "productId": 5,
+        "productId": 4,
         "productBrand": "JS Sloane",
         "productName": "Aftershave Moisturizer",
         "productCode": "GMG-0042",
@@ -54,8 +54,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/JS-AFTER-1.jpg"
     },
-       {
-        "productId": 6,
+    {
+        "productId": 5,
         "productBrand": "JS Sloane",
         "productName": "Aftershave Tonic",
         "productCode": "GMG-0042",
@@ -65,8 +65,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/js-AFTER-2.jpg"
     },
-      {
-        "productId": 7,
+    {
+        "productId": 6,
         "productBrand": "Hair Evolution",
         "productName": "Pomade",
         "productCode": "GDN-0011",
@@ -77,7 +77,7 @@
         "imageUrl": "./img/he-pom.jpg"
     },
     {
-        "productId": 8,
+        "productId": 7,
         "productBrand": "Hair Evolution",
         "productName": "Defining Pomade",
         "productCode": "GDN-0023",
@@ -88,7 +88,7 @@
         "imageUrl": "./img/he-define.jpg"
     },
     {
-        "productId": 9,
+        "productId": 8,
         "productBrand": "Hair Evolution",
         "productName": "Firm Pomade",
         "productCode": "TBX-0048",
@@ -99,7 +99,7 @@
         "imageUrl": "./img/he-firmpom.jpg"
     },
     {
-        "productId": 10,
+        "productId": 9,
         "productBrand": "Hair Evolution",
         "productName": "Paste",
         "productCode": "TBX-0022",
@@ -110,7 +110,7 @@
         "imageUrl": "./img/he-paste.jpg"
     },
     {
-        "productId": 11,
+        "productId": 10,
         "productBrand": "Hair Evolution",
         "productName": "Extra Hold Gel",
         "productCode": "GMG-0042",
@@ -120,8 +120,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/he-extra.jpg"
     },
-       {
-        "productId": 12,
+    {
+        "productId": 11,
         "productBrand": "Hair Evolution",
         "productName": "Firm Hold Gel",
         "productCode": "GMG-0042",
@@ -132,7 +132,7 @@
         "imageUrl": "./img/he-firmgel.jpg"
     },
     {
-        "productId": 13,
+        "productId": 12,
         "productBrand": "Suavecito Pomade",
         "productName": "Original",
         "productCode": "GMG-0042",
@@ -143,7 +143,7 @@
         "imageUrl": ""
     },
     {
-        "productId": 14,
+        "productId": 13,
         "productBrand": "Suavecito Pomade",
         "productName": "Strong Hold",
         "productCode": "GMG-0042",
@@ -154,7 +154,7 @@
         "imageUrl": ""
     },
     {
-        "productId": 15,
+        "productId": 14,
         "productBrand": "Suavecito Pomade",
         "productName": "Grooming Spray",
         "productCode": "GMG-0042",
@@ -165,7 +165,7 @@
         "imageUrl": ""
     },
     {
-        "productId": 16,
+        "productId": 15,
         "productBrand": "Suavecito Pomade",
         "productName": "Brilliant Cream",
         "productCode": "GMG-0042",
@@ -176,7 +176,7 @@
         "imageUrl": ""
     },
     {
-        "productId": 17,
+        "productId": 16,
         "productBrand": "Suavecito Pomade",
         "productName": "Pre-Shave Oil",
         "productCode": "GMG-0042",
@@ -187,7 +187,7 @@
         "imageUrl": ""
     },
     {
-        "productId": 18,
+        "productId": 17,
         "productBrand": "Suavecito Pomade",
         "productName": "Beard Serum",
         "productCode": "GMG-0042",
@@ -197,8 +197,8 @@
         "starRating": 4.6,
         "imageUrl": ""
     },
-     {
-        "productId": 19,
+    {
+        "productId": 18,
         "productBrand": "Suavecito Pomade",
         "productName": "Shave Cream",
         "productCode": "GMG-0042",
@@ -208,8 +208,8 @@
         "starRating": 4.6,
         "imageUrl": ""
     },
-     {
-        "productId": 20,
+    {
+        "productId": 19,
         "productBrand": "Suavecito Pomade",
         "productName": "Aftershave Balm",
         "productCode": "GMG-0042",
@@ -219,8 +219,8 @@
         "starRating": 4.6,
         "imageUrl": ""
     },
-      {
-        "productId": 21,
+    {
+        "productId": 20,
         "productBrand": "High West",
         "productName": "Rockwell's Reserve Beard Balm",
         "productCode": "GMG-0042",
@@ -230,8 +230,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/Balm-Rockwell.jpg"
     },
-      {
-        "productId": 22,
+    {
+        "productId": 21,
         "productBrand": "High West",
         "productName": "Gentlemen's Blend Beard Balm",
         "productCode": "GMG-0042",
@@ -241,8 +241,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/Balm-Gentleman.jpg"
     },
-      {
-        "productId": 23,
+    {
+        "productId": 22,
         "productBrand": "High West",
         "productName": "High Uinta Beard Balm",
         "productCode": "GMG-0042",
@@ -252,8 +252,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/Balm-HighUinta.jpg"
     },
-      {
-        "productId": 24,
+    {
+        "productId": 23,
         "productBrand": "High West",
         "productName": "Bay Rum Beard Balm",
         "productCode": "GMG-0042",
@@ -263,8 +263,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/Balm-BayRum.jpg"
     },
-      {
-        "productId": 25,
+    {
+        "productId": 24,
         "productBrand": "High West",
         "productName": "Rockwell's Reserve Beard Oil",
         "productCode": "GMG-0042",
@@ -274,8 +274,8 @@
         "starRating": 4.6,
         "imageUrl": "/img/Oil-Rockwell.jpg"
     },
-      {
-        "productId": 26,
+    {
+        "productId": 25,
         "productBrand": "High West",
         "productName": "Gentlemen's Beard Oil",
         "productCode": "GMG-0042",
@@ -285,8 +285,8 @@
         "starRating": 4.6,
         "imageUrl": "/img/Oil-Gentleman.jpg"
     },
-     {
-        "productId": 27,
+    {
+        "productId": 26,
         "productBrand": "High West",
         "productName": "High Uinta Beard Oil",
         "productCode": "GMG-0042",
@@ -296,8 +296,8 @@
         "starRating": 4.6,
         "imageUrl": "/img/Oil-HighUinta.jpg"
     },
-     {
-        "productId": 28,
+    {
+        "productId": 27,
         "productBrand": "High West",
         "productName": "Bay Rum Beard Oil",
         "productCode": "GMG-0042",
@@ -307,8 +307,8 @@
         "starRating": 4.6,
         "imageUrl": "/img/Oil-BayRum.jpg"
     },
-     {
-        "productId": 29,
+    {
+        "productId": 28,
         "productBrand": "High West",
         "productName": "Rockwell's Reserve Mustache Wax",
         "productCode": "GMG-0042",
@@ -318,8 +318,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/Mustache-Rockwell.jpg"
     },
-     {
-        "productId": 30,
+    {
+        "productId": 29,
         "productBrand": "High West",
         "productName": "Gentlemen's Mustache Wax",
         "productCode": "GMG-0042",
@@ -329,8 +329,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/Mustache-Gentleman.jpg"
     },
-     {
-        "productId": 31,
+    {
+        "productId": 30,
         "productBrand": "High West",
         "productName": "High Uinta Mustache Wax",
         "productCode": "GMG-0042",
@@ -340,8 +340,8 @@
         "starRating": 4.6,
         "imageUrl": "./img/Mustache-HighUinta.jpg"
     },
-     {
-        "productId": 32,
+    {
+        "productId": 31,
         "productBrand": "High West",
         "productName": "Bay Rum Mustache Wax",
         "productCode": "GMG-0042",
@@ -351,6 +351,4 @@
         "starRating": 4.6,
         "imageUrl": "./img/Mustache-BayRum.jpg"
     }
-   
-    
 ]

@@ -10,7 +10,7 @@ import { ProductService } from './product.service';
     templateUrl: 'app/products/product-list.component.html',
     styleUrls: ['app/products/product-list.component.css'],
     pipes: [ProductFilterPipe],
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
 })
 export class ProductListComponent implements OnInit {
     pageTitle: string = 'Product List';
@@ -19,27 +19,32 @@ export class ProductListComponent implements OnInit {
     showImage: boolean = true;
     listFilter: string;
     errorMessage: string;
-    
-    products: any;
+    products: IProduct[];
 
-    constructor(private _productService: ProductService,
-                private _router: Router){
-        
+    constructor(private productService: ProductService,
+        private router: Router) {
+
+
+
     }
-    
-    
+
+
+    ngOnInit() {
+        this.productService.getProducts()
+            .subscribe(products => this.products = products,
+            error => this.errorMessage = <any>error);
+       
+    }
+
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
 
-    ngOnInit(): void {
-       this.products = this._productService.getProducts();
-          
-    }
+
 
     onRatingClicked(message: string): void {
         this.pageTitle = 'Product List: ' + message;
     }
-    
-    
+
+
 }

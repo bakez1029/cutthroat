@@ -17,38 +17,81 @@ declare var firebase: any;
 })
 
 export class SettingsComponent {
-  firebaseAuth: AngularFireAuth;
-    user: FirebaseObjectObservable<any>;
+    firebaseAuth: AngularFireAuth;
+    user: any; // FirebaseObjectObservable<any>;
     address: FirebaseObjectObservable<any>;
-    email: string;
+    uid: string;
+    authed: boolean = true;
     me: string;
+    mike: string;
+    name: string;
+    email: string;
+    profilepic: string;
+    poop: string;
+    username: string;
+    users: any;
     form: any;
     submitted: boolean = false;
+
     constructor(public af: AngularFire, public AngularFire: AngularFire, private _router: Router) {
-        this.firebaseAuth = AngularFire.auth;
-          this.af.auth.subscribe((auth) => {
+        console.log('>>>>>', this.af.auth);
 
-      if (auth === null) {
-        console.log('User is not logged in!')
-      }
-      else if (this.user == undefined) {
-        console.log('User is logged in!')
-        this.af.database.list('/users').subscribe((_users) => {
-          const filtered = _users.filter(user => user.uid === auth.uid)
-          this.user = this.af.database.object('/users/' + filtered[0].$key)
-          console.log(this.user)
-          this.address = this.af.database.object('/users/' + filtered[0].$key + '/address')
+
+        this.af.database.list('/users').subscribe((users) => {
+            this.users = users;
+        });
+
+
+        this.af.auth.subscribe((auth) => {
+
+            console.log(auth, "called");
+            if (auth == null || (auth == null && auth.uid == null)) {
+                console.log('logged out');
+                this.authed = false;
+                this.user = null;
+                this.poop = 'LOGGED OUT';
+
+                //console.log('User is not logged in!')
+            }
+            else {
+                console.log('logged in');
+                this.authed = true;
+                this.uid = auth.uid;
+                if (this.users == null) {
+                    this.af.database.list('/users').subscribe((users) => {
+
+                        this.users = users;
+                        this.setUsers(auth);
+                    });
+                }
+                else {
+                    this.setUsers(auth);
+                }
+            }
+        });
+    }
+
+    setUsers(auth: any) {
+        //this.users = this.af.database.list('/users');
+        const filtered = this.users.filter(user => user.uid === auth.uid);
+        this.user = this.af.database.object('/users/' + filtered[0].$key);
+        this.address = this.af.database.object('/users/' + filtered[0].$key + '/address');
+        // this.me = this.users[3].uid;
+        // this.mike = this.users[4].uid;
+        //this.username  = filtered[0].$key.name;
+        //console.log('Here are the Admin uids -', this.mike, this.me);
+        console.log('user', this.user, filtered);
+        this.email = filtered[0].email;
+        console.log(this.email)
+        //console.log('User is logged in! - Here is their uid :', auth.uid);
+    }
+
+    resetPassword(email: string): Observable<void> {
+        alert('Your Request has been sent')
+        return Observable.fromPromise<void>(firebase.auth().sendPasswordResetEmail(this.email))
         
 
-        })
-      }
-    })
-  }
 
-resetPassword(email: string): Observable<void> {
-        return Observable.fromPromise<void>(firebase.auth().sendPasswordResetEmail(email))
-        
-          
     }
 
 
@@ -76,9 +119,10 @@ resetPassword(email: string): Observable<void> {
     save(newName: string) {
         this.user.set({ name: newName });
     }
-    update(newName: string, newPhone: string, newProfilePic: string, newAddress: string, newCity: string, newState: string, newZip: string) {
+    update(newName: string, newPhone: string, newProfilePic: string, newAddress: string, newCity: string, newState: string, newZip: string, email: string, uid: string) {
         if (newName || newPhone || newProfilePic || newAddress || newCity || newState || newZip === null) {
-            this.user.set({ name: newName, phone: newPhone, profilepic: newProfilePic });
+            this.user.set({ name: newName, phone: newPhone, profilepic: newProfilePic, email:this.email, uid:this.uid });
+            console.log(this.email, this.uid)
             this.address.set({ address: newAddress, city: newCity, state: newState, zip: newZip });
             alert('Thanks for adding to your profile')
             this._router.navigate(['/'])
@@ -104,20 +148,20 @@ resetPassword(email: string): Observable<void> {
         }
     }
 
-// update(newName: string, newPhone: string, newProfilePic: string, newAddress: string, newCity: string, newState: string, newZip: string) {
-//         if (newName || newPhone || newProfilePic || newAddress || newCity || newState || newZip === null) {
-//             this.user.set({ name: newName, phone: newPhone, profilepic: newProfilePic });
-//             this.address.set({ address: newAddress, city: newCity, state: newState, zip: newZip });
-//             alert('Thanks for adding to your profile')
-//             this._router.navigate(['/'])
-//         }
-//         else {
-//             this.user.update({ name: newName, phone: newPhone, profilepic: newProfilePic });
-//             this.address.update({ address: newAddress, city: newCity, state: newState, zip: newZip });
-//             alert('Thanks for updating your profile')
-//             this._router.navigate(['/'])
-//         }
-//     }
+    // update(newName: string, newPhone: string, newProfilePic: string, newAddress: string, newCity: string, newState: string, newZip: string) {
+    //         if (newName || newPhone || newProfilePic || newAddress || newCity || newState || newZip === null) {
+    //             this.user.set({ name: newName, phone: newPhone, profilepic: newProfilePic });
+    //             this.address.set({ address: newAddress, city: newCity, state: newState, zip: newZip });
+    //             alert('Thanks for adding to your profile')
+    //             this._router.navigate(['/'])
+    //         }
+    //         else {
+    //             this.user.update({ name: newName, phone: newPhone, profilepic: newProfilePic });
+    //             this.address.update({ address: newAddress, city: newCity, state: newState, zip: newZip });
+    //             alert('Thanks for updating your profile')
+    //             this._router.navigate(['/'])
+    //         }
+    //     }
 }
 
 

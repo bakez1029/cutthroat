@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
     templateUrl: 'app/test/test.component.html'
 })
 export class TestComponent {
-    public pageTitle: string = "Testimonials";
+    public pageTitle: string = "Customer Reviews";
     
     //     constructor(private _routeParams: RouteParams,
     //             private _router: Router) {

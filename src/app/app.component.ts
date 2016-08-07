@@ -13,11 +13,11 @@ import { ForgotComponent } from './login/forgot.component';
 import { BarbersComponent } from './barbers/barbers.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contacts.component';
-import { ArtistsComponent } from './artists/artists.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { PhotosComponent } from './photos/photos.component';
 import { TestComponent } from './test/test.component';
 import { ProductListComponent } from './products/product-list.component';
+import { ProductDetailComponent } from './products/product-detail.component';
 import { ProductService } from './products/product.service';
 import { AppService } from './app.service';
 
@@ -25,7 +25,7 @@ const routes: RouterConfig = [
   {
     path: '',
     component: WelcomeComponent
-  }, 
+  },
   {
     path: 'admin',
     component: AdminComponent
@@ -63,10 +63,6 @@ const routes: RouterConfig = [
     component: ContactComponent
   },
   {
-    path: 'artists',
-    component: ArtistsComponent
-  },
-  {
     path: 'jobs',
     component: JobsComponent
   },
@@ -80,7 +76,14 @@ const routes: RouterConfig = [
   },
   {
     path: 'products',
-    component: ProductListComponent
+    component: ProductListComponent,
+    children: [
+      { path: '', component: ProductListComponent },
+      { path: 'item/:id', component: ProductDetailComponent },
+    ]
+  },
+  {
+    path: 'product/:id', component: ProductDetailComponent
   },
 
 ];
@@ -101,7 +104,7 @@ export const appRouterProviders = [
 })
 
 export class AppComponent implements OnInit {
-  user: FirebaseObjectObservable<any>;
+  user: any; // FirebaseObjectObservable<any>;
   address: FirebaseObjectObservable<any>;
   uid: string;
   authed: boolean = true;
@@ -110,47 +113,68 @@ export class AppComponent implements OnInit {
   name: string;
   email: string;
   profilepic: string;
-  poop: string = 'poop';
-
+  poop: string;
+  username: string;
+  users: any;
+  title: 'Cutthroat'
   constructor(public af: AngularFire, private router: Router, private appService: AppService) {
    
-    this.user = appService.user;
-    console.log('user [', this.user, ']');
+    // this.user = appService.user;
+    // console.log('user [', this.user, ']');
 
 
-      this.poop = 'xxxxxxxxxxxx';
 
-    setTimeout(function() {
-      //this.user = this.appService.user;
-      //this.user = 'poopy';
-      console.log('xxx');
-      this.poop = 'yyyyyyyyyy';
-    }, 2000);    
-    
-//     this.af.auth.subscribe((auth) => {
-//   this.af.database.list('/users').subscribe((_users) => {
-//     const filtered = _users.filter(user => user.uid == auth.uid);
-//     var checkUser = filtered[0];
-//     var name, email, profilepic, uid;
+    // setTimeout(() => {
+    //   this.user = this.appService.user;
+    //   console.log('user', this.user);
+    // }, 2000);
 
-// if (checkUser != null) {
-//   name = checkUser.name;
-//   email = checkUser.email;
-//   profilepic = checkUser.profilepic;
-//   uid = checkUser.uid
-//   console.log('Found a User!', checkUser.name, checkUser.email, checkUser.profilepic, checkUser.uid)
-//   }
-//   else {
 
-//       this.router.navigate(['/']);
-//   }
-//   })
-    
-//   })
+
+
+    this.af.auth.subscribe((auth) => {
+
+      //console.log(auth, "called");
+      if (auth == null || (auth == null && auth.uid == null)) {
+        //console.log('logged out');
+        this.authed = false;
+        this.user = null;
+        this.poop = 'LOGGED OUT';
+
+        //console.log('User is not logged in!')
+      }
+      else {
+        //console.log('logged in');
+        this.authed = true;
+        this.uid = auth.uid;
+        if (this.users == null) {
+          this.af.database.list('/users').subscribe((users) => {
+            this.users = users;
+            this.setUsers(auth);
+          });
+        }
+        else {
+          this.setUsers(auth);
+        }
+      }
+    });
   }
 
-getUsers() {
-    this.appService.getUsers();
+  setUsers(auth: any) {
+    //this.users = this.af.database.list('/users');
+    const filtered = this.users.filter(user => user.uid === auth.uid);
+    this.user = this.af.database.object('/users/' + filtered[0].$key);
+    this.address = this.af.database.object('/users/' + filtered[0].$key + '/address');
+    this.me = this.users[3].uid;
+    this.mike = this.users[4].uid;
+    //this.username  = filtered[0].$key.name;
+    //console.log('Here are the Admin uids -', this.mike, this.me);
+    //console.log('user', this.user, filtered);
+    //console.log('User is logged in! - Here is their uid :', auth.uid);
+  }
+
+  getUsers() {
+    //this.appService.getUsers();
   }
   ngOnInit() {
     //this.getUsers();

@@ -6257,6 +6257,7 @@ button.close {
   position: relative;
 }
 .carousel-inner {
+  border: 1px solid #000;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -6271,6 +6272,11 @@ button.close {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   line-height: 1;
+
+}
+
+.carousel-inner img {
+  margin: auto;
 }
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner > .item {
@@ -6333,6 +6339,7 @@ button.close {
 .carousel-inner > .active.right {
   left: 100%;
 }
+
 .carousel-control {
   position: absolute;
   top: 0;
@@ -6434,7 +6441,7 @@ button.close {
   height: 12px;
   margin: 0;
   background-color: #fff;
-}
+*}
 .carousel-caption {
   position: absolute;
   right: 15%;
