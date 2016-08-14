@@ -57,3 +57,4 @@ export class ProductDetailComponent implements OnInit {
         this._router.navigate(['/products']);
     }
 }
+
