@@ -71,5 +71,9 @@ export class WelcomeComponent {
     onClick4(): void {
         this.router.navigate(['/jobs']);
     }
+    onClick5(): void {
+        this.router.navigate(['/services']);
+    }
+
 
 }

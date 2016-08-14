@@ -67,14 +67,14 @@
     },
     {
         "productId": 6,
-        "productBrand": "Hair Evolution",
-        "productName": "Pomade",
-        "productCode": "GDN-0011",
-        "releaseDate": "March 19, 2016",
-        "description": "O.G. Hair Product",
-        "price": 15.00,
-        "starRating": 3.2,
-        "imageUrl": "./img/he-pom.jpg"
+        "productBrand": "JS Sloane",
+        "productName": "Aftershave Splash",
+        "productCode": "GMG-0042",
+        "releaseDate": "October 15, 2015",
+        "description": "Standard two-button video game controller",
+        "price": 25.00,
+        "starRating": 4.6,
+        "imageUrl": "./img/JS-splash.jpg"
     },
     {
         "productId": 7,
@@ -133,14 +133,14 @@
     },
     {
         "productId": 12,
-        "productBrand": "Suavecito Pomade",
-        "productName": "Original",
-        "productCode": "GMG-0042",
-        "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
-        "price": 12.00,
-        "starRating": 4.6,
-        "imageUrl": ""
+        "productBrand": "Hair Evolution",
+        "productName": "Pomade",
+        "productCode": "GDN-0011",
+        "releaseDate": "March 19, 2016",
+        "description": "O.G. Hair Product",
+        "price": 15.00,
+        "starRating": 3.2,
+        "imageUrl": "./img/he-pom.jpg"
     },
     {
         "productId": 13,
@@ -151,7 +151,7 @@
         "description": "Standard two-button video game controller",
         "price": 15.00,
         "starRating": 4.6,
-        "imageUrl": ""
+        "imageUrl": "./img/sauv-strong.jpg"
     },
     {
         "productId": 14,
@@ -162,7 +162,7 @@
         "description": "Standard two-button video game controller",
         "price": 12.00,
         "starRating": 4.6,
-        "imageUrl": ""
+        "imageUrl": "./img/sauv-groom.jpg"
     },
     {
         "productId": 15,
@@ -173,7 +173,7 @@
         "description": "Standard two-button video game controller",
         "price": 12.00,
         "starRating": 4.6,
-        "imageUrl": ""
+        "imageUrl": "./img/sauv-cream.png"
     },
     {
         "productId": 16,
@@ -184,7 +184,7 @@
         "description": "Standard two-button video game controller",
         "price": 12.00,
         "starRating": 4.6,
-        "imageUrl": ""
+        "imageUrl": "./img/sauv-pre.png"
     },
     {
         "productId": 17,
@@ -195,7 +195,7 @@
         "description": "Standard two-button video game controller",
         "price": 12.00,
         "starRating": 4.6,
-        "imageUrl": ""
+        "imageUrl": "./img/sauv-serum.jpg"
     },
     {
         "productId": 18,
@@ -206,7 +206,7 @@
         "description": "Standard two-button video game controller",
         "price": 12.00,
         "starRating": 4.6,
-        "imageUrl": ""
+        "imageUrl": "./img/sauv-shave.jpg"
     },
     {
         "productId": 19,
@@ -217,18 +217,18 @@
         "description": "Standard two-button video game controller",
         "price": 12.00,
         "starRating": 4.6,
-        "imageUrl": ""
+        "imageUrl": "./img/sauv-balm.jpg"
     },
     {
         "productId": 20,
-        "productBrand": "High West",
-        "productName": "Rockwell's Reserve Beard Balm",
+        "productBrand": "Suavecito Pomade",
+        "productName": "Original",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
         "description": "Standard two-button video game controller",
-        "price": 17.00,
+        "price": 12.00,
         "starRating": 4.6,
-        "imageUrl": "./img/Balm-Rockwell.jpg"
+        "imageUrl": "./img/sauv-orig.jpg"
     },
     {
         "productId": 21,
@@ -266,13 +266,13 @@
     {
         "productId": 24,
         "productBrand": "High West",
-        "productName": "Rockwell's Reserve Beard Oil",
+        "productName": "Rockwell's Reserve Beard Balm",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
         "description": "Standard two-button video game controller",
-        "price": 23.00,
+        "price": 17.00,
         "starRating": 4.6,
-        "imageUrl": "/img/Oil-Rockwell.jpg"
+        "imageUrl": "./img/Balm-Rockwell.jpg"
     },
     {
         "productId": 25,
@@ -310,13 +310,13 @@
     {
         "productId": 28,
         "productBrand": "High West",
-        "productName": "Rockwell's Reserve Mustache Wax",
+        "productName": "Rockwell's Reserve Beard Oil",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
         "description": "Standard two-button video game controller",
-        "price": 14.00,
+        "price": 23.00,
         "starRating": 4.6,
-        "imageUrl": "./img/Mustache-Rockwell.jpg"
+        "imageUrl": "/img/Oil-Rockwell.jpg"
     },
     {
         "productId": 29,
@@ -350,5 +350,29 @@
         "price": 14.00,
         "starRating": 4.6,
         "imageUrl": "./img/Mustache-BayRum.jpg"
+    },
+    {
+        "productId": 32,
+        "productBrand": "High West",
+        "productName": "Rockwell's Reserve Mustache Wax",
+        "productCode": "GMG-0042",
+        "releaseDate": "October 15, 2015",
+        "description": "Standard two-button video game controller",
+        "price": 14.00,
+        "starRating": 4.6,
+        "imageUrl": "./img/Mustache-Rockwell.jpg"
+    },
+    {
+        "productId": 33,
+        "productBrand": "Cutthroat Barbershop",
+        "productName": "Brand Logo Shirts",
+        "productCode": "GMG-0042",
+        "releaseDate": "October 15, 2015",
+        "description": "Standard two-button video game controller",
+        "price": 25.00,
+        "starRating": 4.6,
+        "imageUrl": "./img/cb-shirts.jpg"
     }
+
+
 ]

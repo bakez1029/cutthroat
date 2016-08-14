@@ -19,11 +19,13 @@
 
 <body>
   <app-root>Loading...</app-root>
-  <script src="./js/jquery.min.js"></script>
-  <script src="./js/bootstrap.js"></script>
+
+  
 
   <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="./js/materialize.min.js"></script> {{#each scripts.polyfills}}
+  <script src="./js/bootstrap.js"></script>
   <script src="{{.}}"></script> {{/each}}
   <script>
       System.import('system-config.js').then(function () {

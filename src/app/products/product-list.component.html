@@ -29,38 +29,59 @@
                         <br>
                     </div>
                 </div>
-                <div class='table-responsive'>
+                <div class='table- visible-lg'>
                     <table class='table' *ngIf='products && products.length'>
                         <thead>
                             <tr>
-
                                 <th>Brand</th>
                                 <th>Product</th>
                                 <th>Image</th>
                                 <th>Price</th>
-
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor='let product of products'>
-                                <td>
-                                    {{ product.productBrand }}
-                                </td>
-                                <td>
-                                    <a [routerLink]="['/product', {id:product.productId}]">
-                                    <!--<a [routerLink]="['/products', products.id]">-->
-                                    {{product.productName}}
-                                    </a>
-                                </td>
+                            <tr *ngFor='let product of products | productFilter:listFilter'>
+                                <td>{{ product.productBrand }}</td>
+                                <td><a [routerLink]="['/product', product.productId]">{{product.productName}}</a></td>
                                 <td><img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth'
                                         [style.margin.px]='imageMargin'></td>
                                 <td>${{ product.price }}.00</td>
-
                             </tr>
                         </tbody>
                     </table>
                 </div>
-<router-outlet></router-outlet>
+                <div class='table- visible-xs'>
+                    <table class='table' *ngIf='products && products.length'>
+                        <thead>
+                            <tr>
+                                <th>Brand</th>
+                                <th>Product</th>
+                                <th>Image</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let product of products'>
+
+                                <td style="background-color:#f6f6f6">
+                                    <center>
+                                        <a [routerLink]="['/products', {id:product.productId}]">{{ product.productBrand }}&nbsp; -&nbsp;{{product.productName}}</a>
+                                    </center>
+                                </td>
+
+                                <td>
+                                    <br>
+                                    <center><img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth'
+                                            [style.margin.px]='imageMargin'></center>
+                                    <br>
+                                    <center><b>Price : ${{ product.price }}.00</b></center>
+                                </td>
+                                <br>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <router-outlet></router-outlet>
             </div>
 
         </div>

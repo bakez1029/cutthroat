@@ -1,190 +1,261 @@
-<body>
+<style>
+  banner {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    background: #000;
+  }
+  
+  main {
+    flex: 1 0 auto;
+  }
+  
+  .input-field input[type=date]:focus + label,
+  .input-field input[type=text]:focus + label,
+  .input-field input[type=email]:focus + label,
+  .input-field input[type=password]:focus + label {
+    color: #Db2226;
+  }
+  
+  .input-field input[type=date]:focus,
+  .input-field input[type=text]:focus,
+  .input-field input[type=email]:focus,
+  .input-field input[type=password]:focus {
+    border-bottom: 2px solid #DB2226;
+    box-shadow: none;
+  }
+</style>
+
 
 <div id="MENUSIDE">
 
-    <div id="MENUSIDEindent">
+  <div id="MENUSIDEindent">
 
-      <!--NOT AUTHED-->
-      <div *ngIf="!authed" style="color: #98AFC7">
-        <div style="padding-top: 95px; margin-left:15px">"&nbsp;Welcome,&nbsp; Please take a seat&nbsp;"</div>
-        <br>
-        <div>
-          <a [routerLink]="['/login']"><img src="./img/chair.png" style="width: 200px; padding-top:10px; padding-left: 35px"></a>
-        </div>
+    <!--NOT AUTHED-->
+    <div *ngIf="!authed" style="color: #98AFC7">
+      <div style="padding-top: 25px; margin-left:30px">"&nbsp;Welcome,&nbsp; Please take a seat&nbsp;"</div>
+      <br>
+      <div>
+        <a [routerLink]="['/login']"><img src="./img/chair.png" style="width: 200px; padding-top:10px; padding-left: 35px"></a>
       </div>
-
-      <!--{{poop}}-->
-      <!--IF AUTHED OR ADMIN-->
-
-      <div *ngIf="authed" style="color: #fff">
-        <br>
-        <div class="badge" style="float:left; margin-left:120px; margin-bottom: 70px; color: #98AFC7">&nbsp;{{(user | async)?.name}}</div>
-        <br>
-        <div class="dropdown" style="float:left; margin-left:80px;">
-          <a data-target="#" [routerLink]="['/']" data-toggle="dropdown" class="dropdown-toggle"><img src="{{ (user | async)?.profilepic }}" style="width: 128px; height: 128px;float:right; padding:15px" class="img-circle"></a>
-          <ul class="dropdown-menu">
-            <li><a [routerLink]="['/']"><i class="fa fa-home fa-fw"></i> Home</a></li>
-            <li><a [routerLink]="['/settings']"><i class="fa fa-cogs fa-fw"></i> Settings</a></li>
-            <li><a [routerLink]="['/cart']"><i class="fa fa-shopping-basket fa-fw"></i> Cart</a></li>
-            <li *ngIf="authed && uid === me || authed && uid === mike" class="divider"></li>
-            <li *ngIf="authed && uid === me || authed && uid === mike"><a [routerLink]="['/admin']"><i class="fa fa-dashboard fa-fw"></i> Admin</a></li>
-            <li class="divider"></li>
-            <li><a (click)="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
-          </ul>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-
-
-
-
-      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/']"><i class="fa fa-home fa-fw"></i> Home</a></span></span>
-      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/products']"><i class="fa fa-flask fa-fw"></i> Products</a></span></span>
-      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/barbers']"><i class="fa fa-user-secret fa-fw"></i> Barbers</a></span></span>
-      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/services']"><i class="fa fa-hand-scissors-o fa-fw"></i> Services</a></span></span>
-      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/contact']"><i class="fa fa-mobile-phone fa-fw"></i> Contact</a></span></span>
-      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/testimonials']"><i class="fa fa-thumbs-up fa-fw"></i> Reviews</a></span></span>
-      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/photos']"><i class="fa fa-picture-o fa-fw"></i> Photos</a></span></span>
-      <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/jobs']"><i class="fa fa-briefcase fa-fw"></i> Jobs</a></span></span>
-
-
     </div>
+
+    <!--{{poop}}-->
+    <!--IF AUTHED OR ADMIN-->
+
+    <div *ngIf="authed" style="color: #fff">
+      <br>
+      <div class="badge" style="float:left; margin-left:120px; margin-bottom: 70px; color: #98AFC7">&nbsp;{{(user | async)?.name}}</div>
+      <br>
+      <div class="dropdown" style="float:left; margin-left:80px;">
+        <a data-target="#" [routerLink]="['/']" data-toggle="dropdown" class="dropdown-toggle"><img src="{{ (user | async)?.profilepic }}" style="width: 128px; height: 128px;float:right; padding:15px" class="img-circle"></a>
+        <ul class="dropdown-menu">
+          <li><a [routerLink]="['/']"><i class="fa fa-home fa-fw"></i> Home</a></li>
+          <li><a [routerLink]="['/settings']"><i class="fa fa-cogs fa-fw"></i> Settings</a></li>
+          <li><a [routerLink]="['/cart']"><i class="fa fa-shopping-basket fa-fw"></i> Cart</a></li>
+          <li *ngIf="authed && uid === me || authed && uid === mike" class="divider"></li>
+          <li *ngIf="authed && uid === me || authed && uid === mike"><a [routerLink]="['/admin']"><i class="fa fa-dashboard fa-fw"></i> Admin</a></li>
+          <li class="divider"></li>
+          <li><a (click)="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+        </ul>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+    <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/']"><i class="fa fa-home fa-fw"></i> Home</a></span></span>
+    <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/products']"><i class="fa fa-flask fa-fw"></i> Products</a></span></span>
+    <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/barbers']"><i class="fa fa-user-secret fa-fw"></i> Barbers</a></span></span>
+    <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/services']"><i class="fa fa-hand-scissors-o fa-fw"></i> Services</a></span></span>
+    <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/contact']"><i class="fa fa-mobile-phone fa-fw"></i> Contact</a></span></span>
+    <!--<span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/reviews']"><i class="fa fa-thumbs-up fa-fw"></i> Reviews</a></span></span>-->
+    <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/photos']"><i class="fa fa-picture-o fa-fw"></i> Photos</a></span></span>
+    <span class="MenuSideMainLink bordersOfMenuSide" id="data_menutitle marginBottom10"><span class="MainLinkText"><a [routerLink]="['/jobs']"><i class="fa fa-briefcase fa-fw"></i> Jobs</a></span></span>
+
 
   </div>
 
-  <div id="CONTENTSIDE">
+</div>
 
-    <div id="CONTENTSIDEindent">
+<div id="CONTENTSIDE">
 
-      <nav class="navbar navbar-default navbar-static-top visible-xs">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header" style="padding-left: 5px; padding-top: 10px; padding-right:25px">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-              aria-expanded="false" style="float:left">
+  <div id="CONTENTSIDEindent">
+
+    <nav class="navbar navbar-default navbar-static-top visible-xs">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header" style="padding-left: 5px">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false" style="float:left">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-            <a class="btn btn-default" style="float:right"><img src="./img/dollars37.png" style="height: 25px; width:25px"></a>
-          </div>
+          <!--<a class="btn btn-default" style="float:right"><img src="./img/dollars37.png" style="height: 25px; width:25px"></a>-->
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="visible-xs"><a [routerLink]="['/']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Home</a><span class="sr-only">(current)</span></li>
-            <li class="visible-xs"><a [routerLink]="['/products']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Products</a></li>
-            <li class="visible-xs"><a [routerLink]="['/barbers']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Barbers</a></li>
-            <li class="visible-xs"><a [routerLink]="['/services']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Services</a></li>
-            <li class="visible-xs"><a [routerLink]="['/contact']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Contact</a></li>
-            <li class="visible-xs"><a [routerLink]="['/testimonials']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Testimonials</a></li>
-            <li class="visible-xs"><a [routerLink]="['/photos']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Photos</a></li>
-            <li class="visible-xs"><a [routerLink]="['/jobs']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Jobs</a></li>
-            <li class="visible-xs"><a [routerLink]="['/artists']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Artists</a></li>
-          </ul>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="visible-xs"><a [routerLink]="['/']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Home</a><span class="sr-only">(current)</span></li>
+          <li class="visible-xs"><a [routerLink]="['/products']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Products</a></li>
+          <li class="visible-xs"><a [routerLink]="['/barbers']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Barbers</a></li>
+          <li class="visible-xs"><a [routerLink]="['/services']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Services</a></li>
+          <li class="visible-xs"><a [routerLink]="['/contact']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Contact</a></li>
+          <!--<li class="visible-xs"><a [routerLink]="['/reviews']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Reviews</a></li>-->
+          <li class="visible-xs"><a [routerLink]="['/photos']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Photos</a></li>
+          <li class="visible-xs"><a [routerLink]="['/jobs']" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Jobs</a></li>
 
-        </div>
-        <!-- /.navbar-collapse -->
+        </ul>
 
-      </nav>
+      </div>
+      <!-- /.navbar-collapse -->
 
-
-      <div class="ContentSideSections" id="PFTopLinksCover" style="height: 450px; width:100%">
-        <div class="row">
-          <div class="col s4" style="padding-top: 90px">
-            <center>
-              <div class="panel panel-primary" style="height: 250px; width:600px; padding-right: 10px; padding-top: 10px">
+    </nav>
 
 
-                <h3>
-                  <center><u>Address</u></center>
-                </h3>
-                
-                <h4>
-                  <center>2851 S. Redwood Rd, 84119, West Valley City, UT</center>
-                </h4>
-                <h4>
-                  <center>801-548-0118</center>
-                </h4>
-                <br>
-                <h3>
-                  <center><u>Hours of Operation</u></center>
-                </h3>
-                <h4>
-                  <center>Tuesday - Saturday > 9:00 AM - 7:00 PM</center>
-                </h4>
-<br>
+    <div class="ContentSideSections" id="PFTopLinksCover" style="height: 378px; width:100%; overflow:hidden">
+      <div class="main">
+        <div class="banner" style="padding-left: 5px">
+
+          <div class="z-depth-7 lighten-4 row" style="display: inline-block">
+
+            <div class="row">
+              <div class="col s12 m4 l2" style="width: 450px; height:275px">
+                <div class="panel panel-primary" style="width: 420px; height:275px; border:0px">
+
+                  <br>
+                  <h3>
+                    <center><b>
+                      Address
+                    </b></center>
+                  </h3>
+
+                  <h4>
+                    <center><b>2851 S. Redwood Rd, 84119, West Valley City, UT</b></center>
+                  </h4>
+                  <h4>
+                    <center><b>801-548-0118</b></center>
+                  </h4>
+                  <br>
+                  <h3>
+                    <center>
+                      <b>Hours of Operation</b>
+                    </center>
+                  </h3>
+                  <h4>
+                    <center><b>Tuesday - Saturday > 9:00 AM - 7:00 PM<br><br>
+                    Sunday > 11:00 AM - 5:00 PM</b></center>
+                  </h4>
+
+                </div>
               </div>
-            </center>
-          </div>
-          <div class="col s4" style="padding-top: 20px;padding-left:50px">
-            <img class="img-thumbnail" src="./img/logo2.png" style="height: 375px; width:600px">
+              <div class="col s12 m4 l8" style="width: 620px; height:250px">
+                <img class="img-thumbnail center-block" src="./img/logo2.png" style="width: 650px; height:350px; border: 0px">
+              </div>
+
+              <div class="col s12 m4 l2" style="width: 450px; height:275px">
+
+                <div class="panel panel-primary" style="width: 420px; height:275px; float: right; border: 0px">
+                  <br>
+                  <h4>
+                    <center>Reserve a time</center>
+                  </h4>
+                  <center><button class="btn btn-default" style="width: 300px; height: 60px; color: #000">
+              <a href="https://booksy.net/en-us/16276_cutthroat-barbershop_barbers_37796_salt-lake-city">
+                <span style="padding-top:10px">Book Now</span> <i class="fa fa-calendar-check-o fa-fw" style="float:right"></i></a></button></center>
+                  <br>
+                  <h4>
+                    <center>Have a Question?</center>
+                  </h4>
+                  <center><button class="btn btn-default" style="width: 300px; height: 60px; color: #000"><a href="tel:1-801-548-0118"> <span style="padding-top:10px">Call Now</span><i class="fa fa-phone fa-fw" style="float:right"></i></a></button></center>
+                </div>
+              </div>
+            </div>
 
           </div>
-          <div class="col s4" style="padding-top: 150px">
-            <center>
-              <button class="btn btn default" style="width: 400px; height: 60px; color: #000">
-              <a href="https://booksy.net/en-us/16276_cutthroat-barbershop_barbers_37796_salt-lake-city">
-                <span>Book Now</span> <i class="fa fa-calendar-check-o fa-fw" style="float:right"></i></a></button>
-              <br>
-<br>
-              <button class="btn btn default" style="width: 300px; height: 60px; color: #000"><a href="tel:1-801-548-0118"> <span>Call Now</span><i class="fa fa-phone fa-fw" style="float:right"></i></a></button>
-            </center>
-          </div>
- </div>
-</div>
-     </div>
-   
+        </div>
+      </div>
+    </div>
+
+
 
     <div>
       <router-outlet></router-outlet>
     </div>
-    
-  
- </div>
-  <div class="ContentSideSections">
-    <br>
-    <br>
-    <span class="floatLeft fontSize14"><a href="http://www.cutthroatbarbers.com">Cutthroat Barbershop</a>, © 2016</span>
-    <span class="floatRight fontSize14">All rights reserved&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <br>
-    <br>
-    <span class="floatRight fontSize14" style="padding-right: 10px"><a href="http://www.yelp.com/biz/cutthroat-barber-shop-west-valley-city"><img src="./img/yelp.png" style="width:40px; height:40px"></a></span>
-     <span class="floatRight fontSize14" style="padding-right: 10px"><a href="https://www.instagram.com/cutthroat_barber/?hl=en"><img src="./img/insta.png" style="width:40px; height:40px"></a></span>
-     <span class="floatRight fontSize14" style="padding-right: 10px"><a href="https://www.facebook.com/search/513605432131514/local_search?surface=tyah"><img src="./img/fb.png" style="width:40px; height:40px"></a></span>
-    
-<br>
+
 
   </div>
 
-</body>
+  <!--FOOTER DESKTOP-->
+  <div class="visible-lg">
+  <div class="ContentSideSections2">
+    <div class="row">
+
+<div class="col s4">
+    <span class="floatLeft fontSize14" style="padding-top: 55px"><a href="http://www.cutthroatbarbers.com">Cutthroat Barbershop</a>, © 2016</span>
+</div>
+<div class="s4">
+  </div>
+  <div class="s4" style="padding-top: 45px">
+    <span class="floatRight fontSize14" style="padding-right: 10px"><a href="http://www.yelp.com/biz/cutthroat-barber-shop-west-valley-city"><img src="./img/yelp.png" style="width:40px; height:40px"></a></span>
+    <span class="floatRight fontSize14" style="padding-right: 10px"><a href="https://www.instagram.com/cutthroat_barber/?hl=en"><img src="./img/insta.png" style="width:40px; height:40px"></a></span>
+    <span class="floatRight fontSize14" style="padding-right: 10px"><a href="https://www.facebook.com/search/513605432131514/local_search?surface=tyah"><img src="./img/fb.png" style="width:40px; height:40px"></a></span>
+    <!--<span class="floatRight fontSize14">Find us<br>&nbsp;&nbsp;&nbsp;on<br>Social Media</span>-->
+</div>
+
+  </div>
+</div>
+</div>
+  <!--FOOTER MOBILE-->
+  <div class="visible-xs">
+  <div class="ContentSideSections">
+    <div class="row">
+<div class="col s6">
+  <br>
+    <span class="floatLeft fontSize14" style="padding-top: 10px"><a href="http://www.cutthroatbarbershopslc.com">Cutthroat Barbershop</a></span>
+</div>
+
+  <div class="s6">
+    <br>
+    <span class="floatRight fontSize14"><a href="http://www.yelp.com/biz/cutthroat-barber-shop-west-valley-city"><img src="./img/yelp.png" style="width:40px; height:40px"></a></span>
+    <span class="floatRight fontSize14" style="padding-right: 10px"><a href="https://www.instagram.com/cutthroat_barber/?hl=en"><img src="./img/insta.png" style="width:40px; height:40px"></a></span>
+    <span class="floatRight fontSize14" style="padding-right: 10px"><a href="https://www.facebook.com/search/513605432131514/local_search?surface=tyah"><img src="./img/fb.png" style="width:40px; height:40px"></a></span>
+</div>
+
+  </div>
+</div>
+</div>
 
 
-<script type="text/javascript">
+
+  <script type="text/javascript">
 
 $(document).ready(function(){
 
@@ -193,4 +264,3 @@ $(".dropdown-toggle").dropdown('toggle');
 });  
 
 </script>
-

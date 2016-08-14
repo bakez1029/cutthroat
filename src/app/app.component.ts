@@ -15,7 +15,7 @@ import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contacts.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { PhotosComponent } from './photos/photos.component';
-import { TestComponent } from './test/test.component';
+import { ReviewComponent } from './reviews/review.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { ProductService } from './products/product.service';
@@ -71,24 +71,23 @@ const routes: RouterConfig = [
     component: PhotosComponent
   },
   {
-    path: 'testimonials',
-    component: TestComponent
+    path: 'reviews',
+    component: ReviewComponent
   },
   {
     path: 'products',
-    component: ProductListComponent,
-    children: [
-      { path: '', component: ProductListComponent },
-      { path: 'item/:id', component: ProductDetailComponent },
-    ]
+    component: ProductListComponent
+    // children: [
+    //   { path: '', component: ProductListComponent },
+    //   { path: 'item/:id', component: ProductDetailComponent },
+    // ]
   },
   {
-    path: 'product/:id', component: ProductDetailComponent
+    path: 'product/:id',
+    component: ProductDetailComponent
   },
 
 ];
-
-
 
 export const appRouterProviders = [
   provideRouter(routes)

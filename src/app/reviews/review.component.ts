@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    templateUrl: 'app/test/test.component.html'
+    templateUrl: 'app/reviews/review.component.html'
 })
-export class TestComponent {
+export class ReviewComponent {
     public pageTitle: string = "Customer Reviews";
     
     //     constructor(private _routeParams: RouteParams,

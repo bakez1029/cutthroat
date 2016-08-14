@@ -72,11 +72,11 @@ body{margin:0px; height:100%; overflow-x:hidden; overflow-y:auto; background-col
 /* content side style*/
 #CONTENTSIDE{width:auto; overflow:hidden; z-index:1; margin-left:260px; background-color:#FFFFFF;}
 #CONTENTSIDEindent{width:100%; height:auto;}
-.ContentSideSections{padding-left:30px; padding-right:30px; padding-bottom:30px; padding-top:20px; overflow:auto;background-color:#f6f6f6; border-bottom:solid 1px #dde3e6;}
-.ContentSideSections2{margin-bottom: 10px;overflow:auto;background-color:#fff;}
+.ContentSideSections{padding-left:30px; padding-right:30px; padding-bottom:30px; padding-top:20px; overflow:auto;background-color:#fff; border-bottom:solid 1px #dde3e6;}
+.ContentSideSections2{padding-left:10px; padding-right:10px; padding-bottom:10px; padding-top:10px; overflow:auto;background-color:#fff;}
 .MOBILE .ContentSideSections{padding:14px 24px; }
 .MOBILE .ContentSideSections2{padding:14px 24px;}
-#PFTopLinksCover{background-color:#000;}
+#PFTopLinksCover{background-color:#fff;}
 #PFMobileTopLinksCover{ position:inherit; }
 .PFTopLinks{width:80px; display:inline-block; text-align:center; padding:10px 5px; border-radius:5px;  font-size:12px; -webkit-border-radius:5px; margin-top:-17px; background-color: rgb(246, 249, 251); margin-left: 5px;
     -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; overflow:hidden;}
@@ -94,7 +94,7 @@ body{margin:0px; height:100%; overflow-x:hidden; overflow-y:auto; background-col
 #openMenuBtn.focus{background-color:#fff;}
 #openMenuBtn img{width:30px;}
 
-.PropertyBox{width:27%; height:300px; float:left; padding:3%; overflow:hidden; text-align:center; border-radius:5px; -webkit-border-radius:5px; display:block;
+.PropertyBox{width:27%; height:300px; width:300px; padding:3%; overflow:hidden; text-align:center; border-radius:5px; -webkit-border-radius:5px; display:block;
     -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease;}
 .PropertyBox:hover, .MOBILE .PropertyBox:hover{background-color:#e0e5e9;
     -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease;}
@@ -193,7 +193,7 @@ a{ text-decoration:none; outline:none}
 .Content33{width:33%; }
 .Content40{width:40%; }
 .Content60{width:60%; }
-.Content66{width:65%; background-position:left top; background-repeat:no-repeat;}
+.Content66{width:65%}
 .Content100{width:100%;}
 
 /* general text styles */
@@ -734,15 +734,16 @@ div.panel-heading {
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
-  border-color: #ddd;
+  border-style: none;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #ddd;
+  background-color: transparent;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #000;
 }
+
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
   border-color: #e7e7e7;
@@ -814,7 +815,7 @@ text-decoration:none;
 
 .container-fluid {
     background-color: #db2226;
-    border-bottom: 1px solid #000;
+
     }
 
 .form-container {
