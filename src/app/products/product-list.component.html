@@ -1,24 +1,28 @@
-<div class="ContentSideSections overHidden">
-    <div class="Content100 floatLeft overHidden TextShadow">
 
-        <h2>Products not yet available
-            <u>online</u>.</h2>
+
+    <div style="padding-left:10px; padding-right:10px; padding-top:80px; padding-bottom:80px">
+       
+<!--        
+            <span class="dispBlock blackWhite" style="padding-left:10px"><h3>Product not yet available
+            online.</h3></span>
         <br>
-        <h5>Visit us in store to purchase.</h5>
-        <br>
-        <div class='panel panel-primary'>
+        <span class="dispBlock blackWhite" style="padding-left:10px">Visit us in store to purchase.</span>
+        <br>-->
+
+        <div class='panel panel-primary hidden-xs center-block img-responsive' style="height: 100%; width:1244px; background-color:#fff">
             <div class='panel-heading'>
                 <center>{{pageTitle}}</center>
             </div>
             <div class='panel-body'>
                 <div class='row'>
                     <br>
-                    <div class='col-md-2'>Filter by:</div>
-                    <div class='col-md-4'>
-                        <input type='text' [(ngModel)]='listFilter' />
-                    </div>
-                </div>
-                <div class='row'>
+                 
+                    <!--<div class='col-md-2'>Search for:</div>-->
+                    <div style="float:left; height: 90px; width:300px">
+                        <i class="fa fa-search fa-2x" style="padding-left:10px; padding-top:10px"></i>
+                        <input type='text' [(ngModel)]='listFilter' style="padding-left:10px; width:250px">
+</div>
+                <!--<div class='row'>
                     <div class='col-md-6'>
                         <h3>Filtered by: {{listFilter}} </h3>
                         <br>
@@ -28,8 +32,8 @@
                         <br>
                         <br>
                     </div>
-                </div>
-                <div class='table- visible-lg'>
+                </div>-->
+                
                     <table class='table' *ngIf='products && products.length'>
                         <thead>
                             <tr>
@@ -49,8 +53,25 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class='table- visible-xs'>
+         
+</div>
+           </div>
+           </div>
+
+                
+<!--MOBILE-->
+
+                <div class='visible-xs'>
+<br>
+                        
+                        <center><span><i class="fa fa-search fa-2x"></i><input type='text' [(ngModel)]='listFilter' style="padding-left:10px; width:250px"></span></center>
+          
+              <br>
+              <br>
+              
+                    <div class="panel panel-primary" style="border: 1px solid #696969">
+             
+            
                     <table class='table' *ngIf='products && products.length'>
                         <thead>
                             <tr>
@@ -61,11 +82,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor='let product of products'>
+                            <tr *ngFor='let product of products | productFilter:listFilter' style="border-bottom: 15px solid #696969">
 
-                                <td style="background-color:#f6f6f6">
+                                <td style="background-color:#f6f6f6; border-bottom: 1px solid #d3d3d3">
                                     <center>
-                                        <a [routerLink]="['/products', {id:product.productId}]">{{ product.productBrand }}&nbsp; -&nbsp;{{product.productName}}</a>
+                                        <a [routerLink]="['/product', product.productId]">{{ product.productBrand }}&nbsp; -&nbsp;{{product.productName}}</a>
                                     </center>
                                 </td>
 
@@ -75,15 +96,16 @@
                                             [style.margin.px]='imageMargin'></center>
                                     <br>
                                     <center><b>Price : ${{ product.price }}.00</b></center>
+                                    
                                 </td>
                                 <br>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                
+                </div>
+        
                 <router-outlet></router-outlet>
-            </div>
-
-        </div>
-
+       
     </div>

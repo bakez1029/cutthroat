@@ -1,31 +1,25 @@
 <div>
-  <div class="ContentSideSections overHidden">
-    <div class="Content100 floatLeft overHidden TextShadow">
+    <div style="padding-left:10px; padding-right:10px;padding-top:80px; padding-bottom:80px">
 
-      <br>
-      <div class='panel panel-primary'>
-        <div class='panel-heading'>
-          <center>{{pageTitle}}</center>
-        </div>
+   
+        <div class='panel panel-primary center-block img-responsive' style="height: 1152px; width:1244px">
+            <div class='panel-heading'>
+                <center>{{pageTitle}}</center>
+            </div>
 
-        <!--DESKTOP-->
-        
-        <div class='panel-body'>
-          <div class="container">
+            <div class='panel-body'>
 
+             <div class="container">
 
+                <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm.value)" style="padding: 15px">
+                    <!-- we will place our fields here -->
 
-            <div class="container">
-              <div *ngIf="!submitted">
-                <h1></h1>
-                <br>
+                    <!--name-->
 
-                <br>
-                <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm.value)" style="border: 1px solid #000; padding: 15px">
-                  <div class="form-group">
                     <br>
                     <center>
-                    Thank you for your interest in becoming a Cutthroat Barber.<br><br>Please fill out the information below.
+                        Thank you for your interest<br><br> in joining our team.
+                        <br><br>Please fill out the information below.
                     </center>
                     <br>
                     <br>
@@ -33,146 +27,93 @@
                     <br>
                     <br>
                     <br>
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" ngControl="name" #name="ngForm" required>
-                    <div class="alert alert-danger" [hidden]="name.valid || name.pristine">Name is required</div>
-                  </div>
-                  <div class="form-group">
-                    <label for="phone">Telephone</label>
-                    <input type="text" class="form-control" ngControl="phone" #phone="ngForm" required>
-                    <div class="alert alert-danger" [hidden]="phone.valid || phone.pristine">Phone number is required</div>
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" ngControl="email" #email="ngForm" required>
-                    <div class="alert alert-danger" [hidden]="email.valid || email.pristine">Email is required</div>
-                  </div>
-                  <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" class="form-control" ngControl="address" #address="ngForm" required>
-                    <div class="alert alert-danger" [hidden]="address.valid || address.pristine">Address is required</div>
-                  </div>
-                  <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" ngControl="city" #city="ngForm" required>
-                    <div class="alert alert-danger" [hidden]="city.valid || city.pristine">City is required</div>
-                  </div>
-                  <br>
-                  <div class="form-group">
-                    <label for="state">State</label>
-                    <select class="form-control" ngControl="state" #state="ngForm" required>
+                    <div>
+                        <label for="name">Name</label>
+                        <!--bind name to ngModel, it's required with minimum 5 characters-->
+                        <input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" required minlength="5">
+                        <!--show error only when field is not valid & it's dirty or form submited-->
+                        <small [hidden]="name.valid || name.pristine">
+          <br>
+            Name is required (minimum 5 characters).
+            <br>
+        </small>
+                        <br>
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone Number</label>
+                        <!--bind name to ngModel, it's required with minimum 5 characters-->
+                        <input type="text" name="phone" [(ngModel)]="user.phone" #phone="ngModel" required minlength="10">
+                        <!--show error only when field is not valid & it's dirty or form submited-->
+                        <small [hidden]="phone.valid || phone.pristine">
+          <br>
+            Phone is required (minimum 10 characters).
+            <br>
+        </small>
+                        <br>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <!--bind name to ngModel, it's required with minimum 5 characters-->
+                        <input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required minlength="6">
+                        <!--show error only when field is not valid & it's dirty or form submited-->
+                        <small [hidden]="email.valid || email.pristine">
+          <br>
+            Email is required.
+            <br>
+        </small>
+                        <br>
+                    </div>
+
+                    <!--adrress group-->
+                    <div ngModelGroup="address">
+                        <!--street-->
+                        <div>
+                            <label>Street</label>
+                            <input type="text" name="street" [(ngModel)]="user.address.street" #street="ngModel" required>
+                            <small [hidden]="street.valid || (street.pristine)" class="text-danger">
+                Street is required.
+            </small>
+                        </div>
+
+                        <!--postcode-->
+                        <div>
+                            <label>Postal code</label>
+                            <input type="text" name="postcode" [(ngModel)]="user.address.postcode">
+                        </div>
+                        <br>
+                        <div>
+                            <label>State    <br><br><br></label>
+                            <select class="form-control" name="state" [(ngModel)]="user.address.state" #state="ngModel" required>
           <option *ngFor="let s of states" [value]="s">{{ s }}</option>
-        </select>
-                    <div class="alert alert-danger" [hidden]="state.valid || state.pristine">State is required</div>
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <button type="submit" class="btn btn-default" [disabled]="!jobForm.form.valid" style="float:right">Submit</button>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
+      </select>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-default" [disabled]="!jobForm.form.valid" style="float:right">Submit</button>
                 </form>
-              </div>
-              <div *ngIf="submitted">
-                <h2>Is this information correct?</h2>
-                <div class="row">
-                  <div class="col-md-2">Name</div>
-                  <div class="col-md-10 pull-left">{{ form.name }}</div>
-                </div>
-                <div class="row">
-                  <div class="col-md-2">Telephone</div>
-                  <div class="col-md-10 pull-left">{{ form.phone }}</div>
-                </div>
-                <div class="row">
-                  <div class="col-md-2">Email</div>
-                  <div class="col-md-10 pull-left">{{ form.email }}</div>
-                </div>
-                <div class="row">
-                  <div class="col-md-2">Address</div>
-                  <div class="col-md-10 pull-left">{{ form.address }}</div>
-                </div>
-                <div class="row">
-                  <div class="col-md-2">City</div>
-                  <div class="col-md-10 pull-left">{{ form.city }}</div>
-                </div>
-                <div class="row">
-                  <div class="col-md-2">State</div>
-                  <div class="col-md-10 pull-left">{{ form.state }}</div>
-                </div>
-                <br /> Raw output from form.value:
-                <br /> {{ form | json }}
-                <br /><br />
-                <button class="btn btn-default" (click)="submitted=false">Edit</button>
-                <button class="btn btn-default" (click)="submitted=true">Submit</button>
-              </div>
+</div>
+
             </div>
 
-          </div>
+            <br>
+            <br>
+            <br>
+            <br>
 
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
 
 
         </div>
 
-      </div>
 
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  </div>
-</div>

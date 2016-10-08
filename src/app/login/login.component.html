@@ -30,16 +30,12 @@
 </style>
 
 <div>
-  <div class="ContentSideSections overHidden">
-    <div class="Content100 floatLeft overHidden TextShadow">
-
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+  <div>
+    <div style="padding-left:10px; padding-right:10px">
+       
+ <br>
+        <br>
+ 
       <center>
         <div class="container">
           <div class="z-depth-1 white lighten-4 row" style="display: inline-block; padding: 32px 48px 32px 48px; border: 1px solid #EEE;">
@@ -49,40 +45,38 @@
               <!--<img class="responsive-img" style="width: 250px;" src="./img/logo2.png" />-->
 
 
-              <h5 class="red-darken-4-text">Please, login into your account</h5>
+              <h5 class="red-darken-4-text">Please, login to your account</h5>
               <br>
               <br>
               <div class='row'>
                 <div class='input-field col s12'>
-                  <input class='validate' type='text' #email />
+                  <input class='validate' type='text' #l_email />
                   <label for='email'>Enter your email</label>
                 </div>
               </div>
 
               <div class='row'>
                 <div class='input-field col s12'>
-                  <input class='validate' type='password' #password />
+                  <input class='validate' type='password' #l_password />
                   <label for='password'>Enter your password</label>
                 </div>
               </div>
-              <br>
-              <input type="checkbox" id="indeterminate-checkbox" />
-              <label for="indeterminate-checkbox"><a class='grey-text' href='#!'><b>Remember me</b></a></label>
+      
+              <!--<input type="checkbox" id="indeterminate-checkbox" />
+              <label for="indeterminate-checkbox"><a class='grey-text' href='#!'><b>Remember me</b></a></label>-->
               <!--<label style='float: right;'>
 								<a class='blue-text' href='#!'><b>Forgot Password?</b></a>
 							</label>-->
               <br />
-              <br>
-              <br>
+           
               <div class='row'>
-                <button (click)="login(email.value, password.value)" class='col s12 mat-btn mat-btn-large waves-effect' style="background-color:#DB2226">Login</button>
+                <button (click)="login(l_email.value, l_password.value)" class='col s12 mat-btn mat-btn-large waves-effect' style="background-color:#DB2226">Login</button>
               </div>
               <br>
               <div class='row'>
-                <a [routerLink]="['/create']">Create account</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a [routerLink]="['/create']" style="color:#000">Create Account</a>&nbsp;&nbsp;
                 <!--<p style="border-left:medium #000 solid; height:25px"></p>-->
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a [routerLink]="['/forgot']">Forgot Password</a>
+                <a [routerLink]="['/forgot']" style="color:#000">Forgot Password</a>
               </div>
             </center>
           </div>
@@ -106,51 +100,10 @@
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
+   
 
     </div>
   </div>
 </div>
+
+

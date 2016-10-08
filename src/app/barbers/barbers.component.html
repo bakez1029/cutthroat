@@ -1,160 +1,109 @@
-<div>
-    <div class="ContentSideSections overHidden">
-        <div class="Content100 floatLeft overHidden TextShadow">
 
-            <br>
-            <div class='panel panel-primary'>
-                <div class='panel-heading'>
-                    <center>{{pageTitle}}</center>
-                </div>
-
-
-
-                <div class="visible-lg">
-                    <div class='panel-body'>
-
-                        <div class="row" style="padding-left:250px">
-
-                            <div class="col-lg-3 col-md-4 col-xs-6" style="height:200px; width:250px">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/barbers/mike.png" alt="" style="height:200px; width:250px">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Mike Canales</p>
-                                </a>
-
-                            </div>
-
-                            <div class="col-lg-3 col-md-4 col-xs-6" style="height:200px; width:250px">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/skyler.jpg" alt="">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Skylar Givens</p>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-3 col-md-4 col-xs-6" style="height:200px; width:250px">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/cuts/oscar.jpg" alt="" style="height:200px; width:250px">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Oscar Ruiz</p>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-xs-6" style="height:200px; width:250px">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/barbers/freddy.jpg" alt="" style="height:200px; width:250px">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Freddy Mendoza</p>
-                                </a>
-                            </div>
-
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="row" style="padding-left:250px">
-
-                            <div class="col-lg-3 col-md-4 col-xs-6" style="height:200px; width:250px">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/barbers/dalton.jpg" alt="" style="height:200px; width:250px">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Dalton Marcus</p>
-                                </a>
-
-                            </div>
-
-                            <div class="col-lg-3 col-md-4 col-xs-6" style="height:200px; width:250px">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/barbers/lindsay.jpg" alt="" style="height:200px; width:250px">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Lindsay Kersh</p>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-3 col-md-4 col-xs-6" style="height:200px; width:250px">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/barbers/jonathan.jpg" alt="" style="height:200px; width:250px">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Jonathan Sandoval</p>
-                                </a>
-                            </div>
-
-                        </div>
-
+<div style="padding-left:10px; padding-right:10px; padding-top:80px; padding-bottom:80px">
+        <div>
+    
+                <div class='panel panel-primary center-block img-responsive' style="height: 100%; width:1244px">
+                    <div class='panel-heading'>
+                        <center>{{pageTitle}}</center>
                     </div>
-                </div>
+
+                                  <table class='table' *ngIf='barbers && barbers.length'>
+
+                        <tbody>
+                            <tr *ngFor='let barber of barbers | barbFilter'>
+                                <td rowspan="3" style="border:none">
+                                    <br>
+                                    <a [routerLink]="['/barber', barber.barberId]">
+                                        <center>{{barber.barberName}}<br>
+                                            <br>
+                                            <img [src]='barber.barberPic' class="img-thumbnail" style="width:250px; height:250px"></center>
+                                    </a>
+                                    <br>
+                                </td>
 
 
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                                    <table class='table' *ngIf='barbers && barbers.length'>
+
+                        <tbody>
+                            <tr *ngFor='let barber of barbers | barb2Filter'>
+                                <td rowspan="3" style="border:none">
+                                    <br>
+                                    <a [routerLink]="['/barber', barber.barberId]">
+                                        <center>{{barber.barberName}}<br>
+                                            <br>
+                                            <img [src]='barber.barberPic' class="img-thumbnail" style="width:250px; height:250px"></center>
+                                    </a>
+                                    <br>
+                                </td>
 
 
-                <!--MOBILE-->
+                            </tr>
+                        </tbody>
+                    </table>
+
+                                    <table class='table' *ngIf='barbers && barbers.length'>
+
+                        <tbody>
+                            <tr *ngFor='let barber of barbers | barb3Filter'>
+                                <td rowspan="3" style="border:none">
+                                    <br>
+                                    <a [routerLink]="['/barber', barber.barberId]">
+                                        <center>{{barber.barberName}}<br>
+                                            <br>
+                                            <img [src]='barber.barberPic' class="img-thumbnail" style="width:250px; height:250px"></center>
+                                    </a>
+                                    <br>
+                                </td>
 
 
-
-                <div class="visible-xs">
-
-                    <div class='panel-body'>
-                   <br>
-                            <div class="center-block">
-                                <a class="thumbnail" href="#">
-                                    <img class="img-responsive" src="./img/barbers/mike.png" alt="" >
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Mike Canales</p>
-                                </a>
-
-                           
-                       <br>
-                            
-                                <a class="thumbnail" href="#">
-                                    <img class="img-responsive" src="./img/skyler.jpg" alt="">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Skylar Givens</p>
-                                </a>
-                        
-                            <br>
-                            <br>
-                            
-                                <a class="thumbnail" href="#">
-                                    <img class="img-responsive" src="./img/cuts/oscar.jpg" alt="">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Oscar Ruiz</p>
-                                </a>
-                        
-                            <br>
-                            <br>
-                   
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/barbers/freddy.jpg" alt="">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Freddy Mendoza</p>
-                                </a>
-                      
-                            <br>
-                            <br>
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/barbers/dalton.jpg" alt="">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Dalton Marcus</p>
-                                </a>
-
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                 
-                            <br>
-                            <br>
-                      
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/barbers/lindsay.jpg" alt="">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Lindsay Kersh</p>
-                                </a>
-                     
-                            <br>
-                            <br>
-              
-                                <a class="thumbnail" href="#">
-                                    <img class="img-thumbnail" src="./img/barbers/jonathan.jpg" alt="">
-                                    <p class="defaultText" style="margin-bottom: 10px; margin-top: 10px; text-align: center">Jonathan Sandoval</p>
-                                </a>
-                            </div>
-     
-                    </div>
-                    <br>
-                    <br>
                 </div>
-                <br>
-                <br>
-                <br>
-
-                <br>
-                <br>
-
-
-
+            </div>
+            
             </div>
 
-        </div>
+            <!--<div class="visible-tablet">
+                <h3>HELLO TABLET USERS</h3>
+                </div>-->
+
+            <!--<div class='visible-xs' style="padding-left:10px; padding-right:10px">
+                <div class='panel panel-primary'>
+                    <div class='panel-heading' style="border: none">
+                        <center>{{pageTitle}}</center>
+                    </div>
+                    <table class='table' *ngIf='barbers && barbers.length'>
+
+                        <tbody>
+                            <tr *ngFor='let barber of barbers'>
+                                <td style="border:none">
+                                    <br>
+                                    <a [routerLink]="['/barber', barber.barberId]">
+                                        <center>{{barber.barberName}}<br>
+                                            <br>
+                                            <img [src]='barber.barberPic' class="img-thumbnail" [style.width.px]='imageWidth' [style.margin.px]='imageMargin'></center>
+                                    </a>
+                                    <br>
+                                </td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+          
+     
+     -->
+

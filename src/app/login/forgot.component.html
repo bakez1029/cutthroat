@@ -1,11 +1,7 @@
 <div>
-    <div class="ContentSideSections overHidden">
-        <div class="Content100 floatLeft overHidden TextShadow">
-            <br>
-            <br>
-            <br>
-
-
+      <div>
+    <div style="padding-left:10px; padding-right:10px; padding-top:20px">
+       
             <center>
                 <div class="container">
                     <div class="z-depth-1 white lighten-4 row" style="display: inline-block; padding: 32px 48px 30px 48px; border: 1px solid #EEE;">
@@ -16,16 +12,16 @@
                             <h5 class="red-darken-4-text">Please enter your email address.</h5>
                             <br>
                             <br>
-                            <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm.value)">
-                                <div class="form-group">
+                            <form #jobForm="ngForm" (ngSubmit)="onSubmit(resetPassword(email.value))">
+                                <div>
                                     <br>
-                                    <input type="text" class="form-control" ngControl="email" #email="ngForm" required>
+                                    <input type="text" name="email" [(ngModel)]="useremail"  #email="ngModel" required>
                                     <div class="alert alert-danger" [hidden]="email.valid || email.pristine">Email is required</div>
                                 </div>
                                 <br>
                                 <br>
                                 <br>
-                                <button type="submit" (click)="resetPassword(email.value)" [disabled]="!jobForm.form.valid" class='col s12 mat-btn mat-btn-large waves-effect light-blue lighten-2'>Reset Password</button>
+                                <button type="submit" (click)="resetPassword(email.value)" [disabled]="!jobForm.form.valid" class='col s12 mat-btn mat-btn-large waves-effect' style="background-color:#DB2226">Reset Password</button>
 
 
                             </form>

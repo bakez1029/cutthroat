@@ -1,0 +1,103 @@
+[
+{
+        "barberId": 0,
+        "barberName": "Mike Canales - Owner",
+        "barberPic": "./img/barbers/mike.png",
+        "barberNick": "Mike",
+        "barberInsta": "https://www.instagram.com/cutthroat_barber/?hl=en",
+        "instaName": "cutthroat_barber",
+        "barberBio": "",
+        "previewCut": "./img/barbers/dalton.jpg"
+},
+
+    {
+        "barberId": 1,
+        "barberName": "Skylar Givens",
+        "barberNick": "Skylar",
+        "barberPic": "./img/skyler.jpg",
+        "barberInsta": "https://www.instagram.com/bigsky88/?hl=en",
+        "instaName": "bigsky88",
+        "barberBio": "",
+        "previewCut": "./img/barbers/dalton.jpg"
+      
+    },
+    {
+        "barberId": 2,
+        "barberName": "Oscar Ruiz",
+        "barberNick": "Oscar",
+        "barberPic": "./img/barbers/oscar.jpg",
+        "barberInsta": "https://www.instagram.com/oscar.the_barber/?hl=en",
+        "instaName": "oscar.the_barber",
+        "barberBio": "",
+        "previewCut": "./img/cuts/oscar/1.png"
+      
+    },
+    {
+        "barberId": 3,
+        "barberName": "Freddy Mendoza",
+        "barberNick": "Freddy",
+        "barberPic": "./img/barbers/freddy.jpg",
+        "barberInsta":"https://www.instagram.com/freddy@aceventura21/?hl=en",
+        "instaName": "Freddy@aceventura21",
+        "barberBio": "",
+        "previewCut": "./img/barbers/freddy.jpg"
+      
+    },
+    {
+        "barberId": 4,
+        "barberName": "Dalton Marcus",
+        "barberNick": "Dalton",
+        "barberPic": "./img/barbers/dalton.jpg",
+        "barberInsta":"https://www.instagram.com/daltonxbarber/?hl=en",
+        "instaName": "daltonxbarber",
+        "barberBio": "",
+        "previewCut": "./img/barbers/freddy.jpg"
+      
+    },
+    {
+        "barberId": 5,
+        "barberName": "Lindsay Kersh",
+        "barberNick": "Lindsay",
+        "barberPic": "./img/barbers/lindsay.jpg",
+        "barberInsta":"https://www.instagram.com/cutthroat_lady/?hl=en",
+        "instaName": "cutthroat_lady",
+        "barberBio": "",
+        "previewCut": "./img/barbers/dalton.jpg"
+      
+    },
+    {
+        "barberId": 6,
+        "barberName": "Jonathan Sandoval",
+        "barberNick": "Jon",
+        "barberPic": "./img/barbers/jonny.jpg",
+        "barberInsta":"https://www.instagram.com/jj2clean?hl=en",
+        "instaName": "jj2clean",
+        "barberBio": "",
+        "previewCut": "./img/barbers/dalton.jpg"
+      
+    },
+      {
+        "barberId": 7,
+        "barberName": "Vinny Alvarado",
+        "barberNick": "Vinny",
+        "barberPic": "./img/barbers/vinny.jpg",
+        "barberInsta":"https://www.instagram.com/vinnyvicci1/?hl=en",
+        "instaName": "vinnyvicci1",
+        "barberBio": "",
+        "previewCut": "./img/barbers/dalton.jpg"
+      
+    },
+    {
+        "barberId": 8,
+        "barberName": "Luis Campos - Apprentice",
+        "barberNick": "Luis",
+        "barberPic": "./img/barbers/luis.jpg",
+        "barberInsta": "https://www.instagram.com/enrioner/?hl=en",
+        "instaName": "enrioner",
+        "barberBio": "",
+        "previewCut": "./img/barbers/dalton.jpg"
+      
+    }
+
+  
+]

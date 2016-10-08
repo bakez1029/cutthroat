@@ -9,6 +9,7 @@ import 'rxjs/add/observable/fromPromise';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 declare var firebase: any;
+import { UserEmail } from './user.email.interface';
 
 @Component({
     templateUrl: 'app/login/forgot.component.html',

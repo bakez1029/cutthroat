@@ -12,6 +12,7 @@ declare var firebase: any;
 
 
 
+
 @Component({
   templateUrl: 'app/login/login.component.html',
   directives: [ROUTER_DIRECTIVES],
@@ -20,19 +21,20 @@ declare var firebase: any;
 
 export class LoginComponent {
 
-  user: FirebaseObjectObservable<any>;
-  address: FirebaseObjectObservable<any>;
-  uid: string;
-  authed: boolean = false;
-  me: string;
-  mike: string;
-  name: string;
-  email: string;
-  profilepic: string;
+  users: FirebaseListObservable<any>;
+  item: FirebaseObjectObservable<any>;
+  email: 'bakez1029@gmail.com';
+  errorMessage: string;
+
 
   constructor(public af: AngularFire, public AngularFire: AngularFire, private router: Router) {
-  }
+ 
+      this.users = af.database.list('/users');
+    this.af.auth.subscribe(auth => (auth));
 
+
+
+  }
   public loginWithGoogle() {
     // This will perform popup auth with google oauth and the scope will be email
     // Because those options were provided through bootstrap to DI, and we're overriding the provider.
@@ -41,20 +43,14 @@ export class LoginComponent {
     })
   }
 
-  public login(email: string, password: string) {
-    console.log(email, password);
-    this.af.auth.login({
-      email: email, password: password,
-      provider: AuthProviders.Password
-    })
-
+ login(email: string, password: string) {
+    // console.log(email, password);
+    this.af.auth.login({ email: email, password: password, provider: AuthProviders.Password });
     this.router.navigate(['/']);
 
 
-  }
-
-
-
+  
+ }
   public logout() {
     this.af.auth.logout();
     this.router.navigate(['/'])

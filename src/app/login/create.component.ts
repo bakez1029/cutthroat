@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable, AuthProviders, AuthMethods, FirebaseAuthState, firebaseAuthConfig, AngularFireAuth } from 'angularfire2';
@@ -32,17 +32,17 @@ export class CreateComponent {
 
 
     this.users = af.database.list('/users');
-    this.af.auth.subscribe(auth => console.log(auth));
+    this.af.auth.subscribe(auth => (auth));
 
 
   }
   registerUser(email: string, password: string, cpassword: string) {
-    console.log(email, password, cpassword)
+    // console.log(email, password, cpassword)
     if (password === cpassword && email.trim() != '') {
       this.af.auth.createUser({ email: email, password: password }).then((auth) => {
         this.af.auth.login({ email: email, password: password, provider: AuthProviders.Password }).then((loginData) =>
-          console.log(loginData),
-          this.users.push({ email: email, password: password, uid: auth.uid })),
+          // console.log(loginData),
+          this.users.push({ email: email, password: password, uid: auth.uid, name: "User", profilepic: "http://www.homestyler.com/resource/images/en_US/userprofile/default-user-image.png"})),
           this.router.navigate(['/']);
 
       });

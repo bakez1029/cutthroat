@@ -5,10 +5,10 @@
         "productName": "Mediumweight Pomade",
         "productCode": "GDN-0011",
         "releaseDate": "March 19, 2016",
-        "description": "O.G. Hair Product",
+        "description": "For shorter hair styles and that ultra neat look that holds all day. This brilliantine is for the modern classic man with normal to finer hair. With a fresh clean scent, superb hold and control this brilliantine will wash out easy. Apply a small amount to hand and rub into dry hair to style or blow dry hair and comb into place.",
         "price": 17.00,
         "starRating": 3.2,
-        "imageUrl": "./img/JS-MED-2.png"
+        "imageUrl": "./img/JS-MED-2.jpg"
     },
     {
         "productId": 1,
@@ -16,7 +16,7 @@
         "productName": "Heavyweight Pomade",
         "productCode": "GDN-0023",
         "releaseDate": "March 18, 2016",
-        "description": "The Real Pomade",
+        "description": "For harder to manage hair,this product has maximum control and will hold style in place. This superb old style and texture with fresh scent will wash out easy. Apply small amount to hand and rub on dry hair to style or blow dry hair, then add brilliantine and comb into desired style.",
         "price": 17.00,
         "starRating": 4.2,
         "imageUrl": "./img/js.jpg"
@@ -27,7 +27,7 @@
         "productName": "Caviar Clay",
         "productCode": "TBX-0048",
         "releaseDate": "May 21, 2016",
-        "description": "A hair styling fiber wax with beeswax for men.",
+        "description": "Caviar Matte Clay with its fresh scent, is a blend of wax and clay that offers both hold and texture to hair, washes out easy with a traditional matte finish.",
         "price": 19.00,
         "starRating": 4.8,
         "imageUrl": "./img/JS-CAV.jpg"
@@ -38,7 +38,7 @@
         "productName": "Gentlemen's Shampoo",
         "productCode": "TBX-0022",
         "releaseDate": "May 15, 2016",
-        "description": "15-inch steel blade hand saw",
+        "description": "JS Sloane Classic Deep Cleansing Shampoo has been specially designed for men. It helps to keep hair neat all day and uses the latest technology to infuse moisture in dry hair. The vegetable based formula is derived with proteins to help promote healthy and strong hair.",
         "price": 17,
         "starRating": 3.7,
         "imageUrl": "./img/JS-sham.jpg"
@@ -49,7 +49,7 @@
         "productName": "Aftershave Moisturizer",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "JS Sloane After Shave Moisturizing Lotion, with its light fresh fragrance specially formulated to hydrate and soften skin after shaving, leaving face incredibly smooth, also long lasting throughout the day.",
         "price": 15.00,
         "starRating": 4.6,
         "imageUrl": "./img/JS-AFTER-1.jpg"
@@ -57,13 +57,13 @@
     {
         "productId": 5,
         "productBrand": "JS Sloane",
-        "productName": "Aftershave Tonic",
+        "productName": "Pre Shave Oil",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "JS Sloane Pre Shave Oil softens the beard, prepares skin for close and comfortable shave which protects against razor burn and irritation. It is formulated with Vitamin E and essential oils that helps the blade glide over the skin. Especially ideal for men with sensitive skin and tough beards.",
         "price": 25.00,
         "starRating": 4.6,
-        "imageUrl": "./img/js-AFTER-2.jpg"
+        "imageUrl": "./img/JS-tonic.jpg"
     },
     {
         "productId": 6,
@@ -71,7 +71,7 @@
         "productName": "Aftershave Splash",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "With a distinctive 1940's scent JS Sloane After Shave Splash provides gents with a perfectly smooth finish from a classic shave. Your skin will feel invigorated, fresh and tight.",
         "price": 25.00,
         "starRating": 4.6,
         "imageUrl": "./img/JS-splash.jpg"
@@ -82,7 +82,7 @@
         "productName": "Defining Pomade",
         "productCode": "GDN-0023",
         "releaseDate": "March 18, 2016",
-        "description": "The Real Pomade",
+        "description": "Defining Pomade is a fiber pomade with an extremely versatile formula. It is a water based formulation that offers depth and texture with a medium flexible hold and brilliant shine finish allowing for re-style on all types of hairstyles. Its ingredients offer numerous advantages; enriched with HE Synergy Botanical Blend, it contains Lavender Extract, which helps nourish and moisturize the scalp and hair shaft.  Defining Pomade helps increase the volume of hair and shine while also moisturizing it. It adds anti-humidity agent in the hair, which helps protect against thinning and breakage as well as an anti-frizz smoother.",
         "price": 15.00,
         "starRating": 4.2,
         "imageUrl": "./img/he-define.jpg"
@@ -93,7 +93,7 @@
         "productName": "Firm Pomade",
         "productCode": "TBX-0048",
         "releaseDate": "May 21, 2016",
-        "description": "A hair styling fiber wax with beeswax for men.",
+        "description": "Hairevolution Firm Pomade provides a firm hold and smooth control with shine. It  does not flake and is a water base formula that is easy to shampoo out. Firm Pomade controls hair frizz, which allows for a smooth even look to the hair.  It is enriched with HE Synergy Botanical Blend, which contains Nettle Extract.  While cleaning and stimulating the scalp, Nettle Extract provides the hair with healthy condition for hair growth.  Firm Pomade works great on curly or coarse hair and can be re-styled if desired.",
         "price": 15.00,
         "starRating": 4.8,
         "imageUrl": "./img/he-firmpom.jpg"
@@ -104,7 +104,7 @@
         "productName": "Paste",
         "productCode": "TBX-0022",
         "releaseDate": "May 15, 2016",
-        "description": "15-inch steel blade hand saw",
+        "description": "This is a pliable matte finish Paste provides great manageability and texture while allowing you to style your hair in any way you desire.  Paste  provides separation and molding while adding texture, shapes, and changeable styles.  It is a water based formula that will allow you to re-style your hair throughout the day.  This formula is enriched with HE Synergy Botanical Blend to help prevent hair from drying out and getting damaged.  It contains Bamboo Extract within the HE Synergy Botanical Blend.  Bamboo Extract helps strengthen hair and reduces hair thinning.  Apply Paste with two fingers, get a small amount of Paste and rub in hands apply from roots to ends this will allow you to create texture, and separation in your style.  May be applied on damp or dry hair.",
         "price": 15.00,
         "starRating": 3.7,
         "imageUrl": "./img/he-paste.jpg"
@@ -115,7 +115,7 @@
         "productName": "Extra Hold Gel",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Hairevolution Extra Hold Gel is a lightweight, alcohol free formula. It is enriched with HE Botanical Blend; composed of Nettle, Aloe Vera and Rosemary Extracts, which are soothing to the scalp and promote thick and healthy hair. Its thick consistency is perfect for creating unique styles with extra hold strength. Use less for medium hold and more for extra hold. Apply on wet or dry hair evenly from roots to ends and style as desired.",
         "price": 15.00,
         "starRating": 4.6,
         "imageUrl": "./img/he-extra.jpg"
@@ -126,7 +126,7 @@
         "productName": "Firm Hold Gel",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "This is a flexible firm hold gel with sculpting and movement control that adds seedless shine and allows for long lasting style memory.  It is a lightweight formula without build up and does not flake.  Firm Hold Gel is Alcohol-Free and is enriched with HE Synergy Blend.",
         "price": 15.00,
         "starRating": 4.6,
         "imageUrl": "./img/he-firmgel.jpg"
@@ -137,7 +137,7 @@
         "productName": "Pomade",
         "productCode": "GDN-0011",
         "releaseDate": "March 19, 2016",
-        "description": "O.G. Hair Product",
+        "description": "Pomade is a water based pomade that gives a natural hold and rinses out easy.  It offers a great shine and clean look that provides control, depth and texture while conditioning to the hair.  Pomade provides incredible shine without oily feel.  It is enriched with HE Synergy Botanical Blend and contains rich amounts of Lavender extract, which helps nourish and moisturize the scalp and hair shaft.  Pomade is easily rinsed out of the hair. ",
         "price": 15.00,
         "starRating": 3.2,
         "imageUrl": "./img/he-pom.jpg"
@@ -148,7 +148,7 @@
         "productName": "Strong Hold",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Taking Suavecito’s Original Hold pomade formula and kicking it up a notch, Suavecito’s Firme Hold Pomade is an extra strength hair styling pomade. For those days your hair needs a little extra ‘help’, this water soluble pomade will tame anything you throw at it. This formula works great for curly, thick or stubborn hair. Pompadours, slick backs and side parts can be styled with ease. Strong and tough but still combs in with ease. With the same awesome base ingredients and scent as our original, this pomade washes out easily and doesn’t flake. No need for any special soaps or shampoos. It dries with a high firmness and medium shine.",
         "price": 15.00,
         "starRating": 4.6,
         "imageUrl": "./img/sauv-strong.jpg"
@@ -159,7 +159,7 @@
         "productName": "Grooming Spray",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "This is a uniquely scented styling water based product that is formulated to keep your hair in place all day long. It combs into your hair easily with it’s creamy consistency and provides a strong grip for a slick back, pompadour, side part or any hairstyle you are rocking. This pomade is water-soluble, washing out with no effort using only water leaving your hair feeling untouched. No special shampoos or soaps are needed for removal. It dries with a medium firmness and medium shine. No flakes and no harsh chemicals.",
         "price": 12.00,
         "starRating": 4.6,
         "imageUrl": "./img/sauv-groom.jpg"
@@ -170,7 +170,7 @@
         "productName": "Brilliant Cream",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Sometimes your hair doesn’t need an extreme amount of holding power that our fine pomades provide. Sometimes, a more casual or a “I don’t bother, but really I do” look is needed. You may also have locks that are easier to work with where styling is a simple affair. Maybe it just needs just a touch of something. With that in mind we present you a truly unique and old school product with Suavecito’s Hair Cream. A hair cream or as some call a “leave in conditioner” that works to style your locks effortlessly without a strong overbearing hold. This product gives your hair a healthy natural shine, softens and conditions. It is also re-workable throughout the day with either a comb or just your fingers. It does not give you a crunchy feeling or any flakes you can get with a cheap hair gel.",
         "price": 12.00,
         "starRating": 4.6,
         "imageUrl": "./img/sauv-cream.png"
@@ -181,7 +181,7 @@
         "productName": "Pre-Shave Oil",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "The first step to a great shave is preparation. Without proper preparation you will not get that perfect shave. While you are warming your shaving cream or getting your razor ready, grab this Pre-Shave Oil. Apply to your beard and let it soak into your skin. This pre-shave oil softens the skin, calms the beard and prepares you for the closest shave you will ever experience. Your razor blade will glide effortlessly over your skin for a better and healthier shaving experience. No more razors tugging on your skin which can cause rash, burns and bumps. Our shave oil is made with 100% natural essential oils and plant ingredients such as Vitamin E Oil, Aloe Vera Oil and Jojoba Oil which are great for the skin. This pre-shave oil makes a great pair with our shaving cream.",
         "price": 12.00,
         "starRating": 4.6,
         "imageUrl": "./img/sauv-pre.png"
@@ -192,7 +192,7 @@
         "productName": "Beard Serum",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "A good beard is one that is well taken care of. A great beard is one that uses serum! This unscented recipe is made up from natural ingredients to ensure you have healthy, well maintained facial hair or mustache. Made from natural ingredients, such as Argan Oil, which is most commonly used to make hair softer, silkier and shinier naturally. It is the ideal hair conditioner to tame frizzy hair. Use this beard oil to condition your beard or your mustache. It is unscented for all day comfort. Works for any beard style or mustache style.",
         "price": 12.00,
         "starRating": 4.6,
         "imageUrl": "./img/sauv-serum.jpg"
@@ -203,7 +203,7 @@
         "productName": "Shave Cream",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Shave in comfort and ease with Suavecito’s Shaving Cream. There are a lot of shaving creams to choose from out there. Many of them are just that, boring, run of the mill creams that may or may not work hard to ensure you have the best shave possible. Our amazing cream is like none other. It is formulated to make sure you have a great, and most importantly, healthy shaving experience - while saving you money in the process. This cream is also pre-whipped for ease of use. You will not need a brush if you don’t have one. Simply scoop our rich lathering cream onto your face and work it in. A little of this goes a long way. The natural peppermint opens your pores to get your razor in ultra close. It washes off painlessly with water and does not dry out your skin. Finish up with one of our healing and soothing aftershaves and walk out the door refreshed - ready to take on the day.",
         "price": 12.00,
         "starRating": 4.6,
         "imageUrl": "./img/sauv-shave.jpg"
@@ -214,7 +214,7 @@
         "productName": "Aftershave Balm",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Suavecito Premium Blends Sandalwood Aftershave Balm - the best part of the shave. Grab this aftershave balm after your shave to provide gentle soothing nourishment for your skin. Made with natural ingredients such as Aloe Vera, vitamin E oil and Shea butter for a healthy post-shave experience. Your face wants it and your face definitely deserves it. Keep your skin feeling fresh and looking great. A little goes a long way.",
         "price": 12.00,
         "starRating": 4.6,
         "imageUrl": "./img/sauv-balm.jpg"
@@ -225,7 +225,7 @@
         "productName": "Original",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "It all started with one pomade - Suavecito’s Original Hold Pomade. This is a uniquely scented styling water based product that is formulated to keep your hair in place all day long. It combs into your hair easily with it’s creamy consistency and provides a strong grip for a slick back, pompadour, side part or any hairstyle you are rocking. This pomade is water-soluble, washing out with no effort using only water leaving your hair feeling untouched. No special shampoos or soaps are needed for removal. It dries with a medium firmness and medium shine. No flakes and no harsh chemicals.",
         "price": 12.00,
         "starRating": 4.6,
         "imageUrl": "./img/sauv-orig.jpg"
@@ -236,7 +236,7 @@
         "productName": "Gentlemen's Blend Beard Balm",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Gentleman’s Blend Beard Balm is one of our best selling scents. The reason is because it’s a sophisticated concoction that gives you a fresh out of the barber shop chair from a hot shave feel, but you’re still a man – because you kept the beard. Combining premium quality bergamot and lavender essential oils it takes you back to the first time you sat in a barber’s chair getting all soaped up. Bergamot is a fresh herbal scent, while the lavender is a simple yet unmistakable fragrance. Combine the two scents, and you’ll soon realize you will never have to get a hot shave again thanks to this unique blend.",
         "price": 17.00,
         "starRating": 4.6,
         "imageUrl": "./img/Balm-Gentleman.jpg"
@@ -247,7 +247,7 @@
         "productName": "High Uinta Beard Balm",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "The Uinta Mountains are some of the most stunning mountains in all of Utah, and this scent is just as magnificent. High Uinta Beard Balm is a woodsy smell that elevates your olfactories to a point that you’ll actually believe you’ve been transported to the high Uintas themselves. Our premium essential oil blend will smell like you just cut down a pine tree to be used as firewood while surviving off the land. The pine scent can be overwhelming, so we brought it back down to earth using hints of cedar to offer a sweet pine smell. The smell is clean and energizing. Breathe deeply and you’ll imagine yourself in the woods on a snowy evening. This scent will keep you feeling fresh during any season.",
         "price": 17.00,
         "starRating": 4.6,
         "imageUrl": "./img/Balm-HighUinta.jpg"
@@ -258,7 +258,7 @@
         "productName": "Bay Rum Beard Balm",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "If you’ve done your research, you know that Bay Rum is the Holy Grail of smelling like a man. Our Bay Rum Beard Balm is a traditional man’s scent which has been described as invigorating, masculine, with just a hint of spice. Bay Rum is a light scent combining all things man: Dark Rum, West Indian Bay Tree, Lime, Clove, and Cinnamon. Imagine opening a bottle of high quality dark rum, while surrounded by fragrant spices. How does High West Beard’s Bay Rum compare to others? I think it’s safe to say that we have successfully completed our quest for the grail. Nothing screams “I’m A Pirate!” more than this popular scent.",
         "price": 17.00,
         "starRating": 4.6,
         "imageUrl": "./img/Balm-BayRum.jpg"
@@ -269,7 +269,7 @@
         "productName": "Rockwell's Reserve Beard Balm",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Rockwell's Reserve Beard Balm is here to make a statement. For those history buffs that know a thing or two about Porter Rockwell, this scent will need no introduction. Inspired by Porter’s cinnamon-vanilla whiskey, this amazing scent is meant for only the manliest of men, justifiably called Rockwell’s Reserve. Scented with vanilla and just a hint of cinnamon premium essential oils, you’ll stop people in their tracks when walking by. This scent will make you wish you were sitting in an old timey bar while the piano player in the corner fills the room with music, while waiting for the outlaws to arrive in order to defend your turf. The vanilla has a rich smell with just a buttery top note, while the cinnamon adds a kick of spice that shows people exactly what you’re made of. When the weather starts to get cold, this is the perfect scent to warm you right up.",
         "price": 17.00,
         "starRating": 4.6,
         "imageUrl": "./img/Balm-Rockwell.jpg"
@@ -280,7 +280,7 @@
         "productName": "Gentlemen's Beard Oil",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Gentleman’s Blend Beard Oil is one of our best selling scents. The reason is because it’s a sophisticated concoction that gives you a fresh out of the barber shop chair from a hot shave feel, but you’re still a man – because you kept the beard. Combining premium quality bergamot and lavender essential oils it takes you back to the first time you sat in a barber’s chair getting all soaped up. Bergamot is a fresh herbal scent, while the lavender is a simple yet unmistakable fragrance. Combine the two scents, and you’ll soon realize you will never have to get a hot shave again thanks to this unique blend.",
         "price": 23.00,
         "starRating": 4.6,
         "imageUrl": "/img/Oil-Gentleman.jpg"
@@ -291,7 +291,7 @@
         "productName": "High Uinta Beard Oil",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "The Uinta Mountains are some of the most stunning mountains in all of Utah, and this scent is just as magnificent. High Uinta Beard Oil is a woodsy smell that elevates your olfactories to a point that you’ll actually believe you’ve been transported to the high Uintas themselves. Our premium essential oil blend will smell like you just cut down a pine tree to be used as firewood while surviving off the land. The pine scent can be overwhelming, so we brought it back down to earth using hints of cedar to offer a sweet pine smell. The smell is clean and energizing. Breathe deeply and you’ll imagine yourself in the woods on a snowy evening. This scent will keep you feeling fresh during any season.",
         "price": 23.00,
         "starRating": 4.6,
         "imageUrl": "/img/Oil-HighUinta.jpg"
@@ -302,7 +302,7 @@
         "productName": "Bay Rum Beard Oil",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Our Bay Rum Beard Oil is a traditional man’s scent which has been described as invigorating, masculine, with just a hint of spice. Bay Rum is a light scent combining all things man: Dark Rum, West Indian Bay Tree, Lime, Clove, and Cinnamon. Imagine opening a bottle of high quality dark rum, while surrounded by fragrant spices. How does High West Beard’s Bay Rum compare to others? I think it’s safe to say that we have successfully completed our quest for the grail. Nothing screams “I’m A Pirate!” more than this popular scent.",
         "price": 23.00,
         "starRating": 4.6,
         "imageUrl": "/img/Oil-BayRum.jpg"
@@ -313,7 +313,7 @@
         "productName": "Rockwell's Reserve Beard Oil",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Rockwell's Reserve Beard Oil is here to make a statement. For those history buffs that know a thing or two about Porter Rockwell, this scent will need no introduction. Inspired by Porter’s cinnamon-vanilla whiskey, this amazing scent is meant for only the manliest of men, justifiably called Rockwell’s Reserve. Scented with vanilla and just a hint of cinnamon premium essential oils, you’ll stop people in their tracks when walking by. This scent will make you wish you were sitting in an old timey bar while the piano player in the corner fills the room with music, while waiting for the outlaws to arrive in order to defend your turf. The vanilla has a rich smell with just a buttery top note, while the cinnamon adds a kick of spice that shows people exactly what you’re made of. When the weather starts to get cold, this is the perfect scent to warm you right up.",
         "price": 23.00,
         "starRating": 4.6,
         "imageUrl": "/img/Oil-Rockwell.jpg"
@@ -324,7 +324,7 @@
         "productName": "Gentlemen's Mustache Wax",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Gentleman’s Blend Mustache Wax is one of our best selling scents. The reason is because it’s a sophisticated concoction that gives you a fresh out of the barber shop chair from a hot shave feel, but you’re still a man – because you kept the beard. Combining premium quality bergamot and lavender essential oils it takes you back to the first time you sat in a barber’s chair getting all soaped up. Bergamot is a fresh herbal scent, while the lavender is a simple yet unmistakable fragrance. Combine the two scents, and you’ll soon realize you will never have to get a hot shave again thanks to this unique blend.",
         "price": 14.00,
         "starRating": 4.6,
         "imageUrl": "./img/Mustache-Gentleman.jpg"
@@ -335,7 +335,7 @@
         "productName": "High Uinta Mustache Wax",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "The Uinta Mountains are some of the most stunning mountains in all of Utah, and this scent is just as magnificent. High Uinta Mustache Wax is a woodsy smell that elevates your olfactories to a point that you’ll actually believe you’ve been transported to the high Uintas themselves. Our premium essential oil blend will smell like you just cut down a pine tree to be used as firewood while surviving off the land. The pine scent can be overwhelming, so we brought it back down to earth using hints of cedar to offer a sweet pine smell. The smell is clean and energizing. Breathe deeply and you’ll imagine yourself in the woods on a snowy evening. This scent will keep you feeling fresh during any season.",
         "price": 14.00,
         "starRating": 4.6,
         "imageUrl": "./img/Mustache-HighUinta.jpg"
@@ -346,7 +346,7 @@
         "productName": "Bay Rum Mustache Wax",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "If you’ve done your research, you know that Bay Rum is the Holy Grail of smelling like a man. Our Bay Rum Mustache Wax is a traditional man’s scent which has been described as invigorating, masculine, with just a hint of spice. Bay Rum is a light scent combining all things man: Dark Rum, West Indian Bay Tree, Lime, Clove, and Cinnamon. Imagine opening a bottle of high quality dark rum, while surrounded by fragrant spices. How does High West Beard’s Bay Rum compare to others? I think it’s safe to say that we have successfully completed our quest for the grail. Nothing screams “I’m A Pirate!” more than this popular scent.",
         "price": 14.00,
         "starRating": 4.6,
         "imageUrl": "./img/Mustache-BayRum.jpg"
@@ -357,18 +357,18 @@
         "productName": "Rockwell's Reserve Mustache Wax",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Rockwell's Reserve Beard Mustache Wax is here to make a statement. For those history buffs that know a thing or two about Porter Rockwell, this scent will need no introduction. Inspired by Porter’s cinnamon-vanilla whiskey, this amazing scent is meant for only the manliest of men, justifiably called Rockwell’s Reserve. Scented with vanilla and just a hint of cinnamon premium essential oils, you’ll stop people in their tracks when walking by. This scent will make you wish you were sitting in an old timey bar while the piano player in the corner fills the room with music, while waiting for the outlaws to arrive in order to defend your turf. The vanilla has a rich smell with just a buttery top note, while the cinnamon adds a kick of spice that shows people exactly what you’re made of. When the weather starts to get cold, this is the perfect scent to warm you right up.",
         "price": 14.00,
         "starRating": 4.6,
         "imageUrl": "./img/Mustache-Rockwell.jpg"
     },
     {
         "productId": 33,
-        "productBrand": "Cutthroat Barbershop",
-        "productName": "Brand Logo Shirts",
+        "productBrand": "Cutthroat",
+        "productName": "Shirts",
         "productCode": "GMG-0042",
         "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "description": "Cutthroat Barbershop Brand Logo Shirts",
         "price": 25.00,
         "starRating": 4.6,
         "imageUrl": "./img/cb-shirts.jpg"

@@ -17,7 +17,7 @@ declare var firebase: any;
 })
 
 export class AdminComponent {
-
+    public pageTitle: string = "Admin Dashboard";
     firebaseAuth: AngularFireAuth;
     user: any; // FirebaseObjectObservable<any>;
     address: FirebaseObjectObservable<any>;
@@ -33,22 +33,23 @@ export class AdminComponent {
     users: any;
     submitted: boolean = false; 
     forms: any;
-    form: FirebaseObjectObservable<any>;
+    form: any;
     form2: FirebaseObjectObservable<any>;
-
+    i: number;
+    dir:any;
     constructor(public af: AngularFire, public AngularFire: AngularFire, private _router: Router) {
 
 
-        this.af.database.list('/forms').subscribe((forms) => {
-            this.forms = forms;
-        });
+        // this.af.database.list('/forms').subscribe((forms) => {
+        //     this.forms = forms;
+        // });
 
 
         this.af.auth.subscribe((auth) => {
 
-            console.log(auth, "called");
+            // console.log(auth, "called");
             if (auth == null || (auth == null && auth.uid == null)) {
-                console.log('logged out');
+                // console.log('logged out');
                 this.authed = false;
                 this.user = null;
                 this.poop = 'LOGGED OUT';
@@ -56,7 +57,7 @@ export class AdminComponent {
                 //console.log('User is not logged in!')
             }
             else {
-                console.log('logged in');
+                // console.log('logged in');
                 this.authed = true;
                 this.uid = auth.uid;
                 if (this.forms == null) {
@@ -73,9 +74,13 @@ export class AdminComponent {
     }
 
     setUsers(auth: any) {
-    this.form = this.af.database.object('/forms/' + this.forms[0].$key + '/ApplicantInfo')
-    this.form2 = this.af.database.object('/forms/' + this.forms[1].$key + '/ApplicantInfo')
-       
+   
+    // this.form2 = this.af.database.object('/forms/' + this.forms[1].$key + '/ApplicantInfo')
+    
+    for ( var i = 0; i < this.forms.length; i++) { //get all the form data
+        console.log(this.forms[i], "x")
+   
+    }
 
 
 

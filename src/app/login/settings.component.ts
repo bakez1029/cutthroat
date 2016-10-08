@@ -17,6 +17,7 @@ declare var firebase: any;
 })
 
 export class SettingsComponent {
+    public pageTitle: string = "Account Settings & Information";
     firebaseAuth: AngularFireAuth;
     user: any; // FirebaseObjectObservable<any>;
     address: FirebaseObjectObservable<any>;
@@ -34,7 +35,7 @@ export class SettingsComponent {
     submitted: boolean = false;
 
     constructor(public af: AngularFire, public AngularFire: AngularFire, private _router: Router) {
-        console.log('>>>>>', this.af.auth);
+        // console.log('>>>>>', this.af.auth);
 
 
         this.af.database.list('/users').subscribe((users) => {
@@ -44,9 +45,9 @@ export class SettingsComponent {
 
         this.af.auth.subscribe((auth) => {
 
-            console.log(auth, "called");
+            // console.log(auth, "called");
             if (auth == null || (auth == null && auth.uid == null)) {
-                console.log('logged out');
+                // console.log('logged out');
                 this.authed = false;
                 this.user = null;
                 this.poop = 'LOGGED OUT';
@@ -54,7 +55,7 @@ export class SettingsComponent {
                 //console.log('User is not logged in!')
             }
             else {
-                console.log('logged in');
+                // console.log('logged in');
                 this.authed = true;
                 this.uid = auth.uid;
                 if (this.users == null) {
@@ -80,16 +81,16 @@ export class SettingsComponent {
         // this.mike = this.users[4].uid;
         //this.username  = filtered[0].$key.name;
         //console.log('Here are the Admin uids -', this.mike, this.me);
-        console.log('user', this.user, filtered);
+        // console.log('user', this.user, filtered);
         this.email = filtered[0].email;
-        console.log(this.email)
+        // console.log(this.email)
         //console.log('User is logged in! - Here is their uid :', auth.uid);
     }
 
     resetPassword(email: string): Observable<void> {
         alert('Your Request has been sent')
         return Observable.fromPromise<void>(firebase.auth().sendPasswordResetEmail(this.email))
-        
+
 
 
     }
@@ -104,7 +105,7 @@ export class SettingsComponent {
     }
 
     public login(email: string, password: string) {
-        console.log(email, password);
+        // console.log(email, password);
         this.af.auth.login({
             email: email, password: password,
             provider: AuthProviders.Password
@@ -119,21 +120,53 @@ export class SettingsComponent {
     save(newName: string) {
         this.user.set({ name: newName });
     }
-    update(newName: string, newPhone: string, newProfilePic: string, newAddress: string, newCity: string, newState: string, newZip: string, email: string, uid: string) {
-        if (newName || newPhone || newProfilePic || newAddress || newCity || newState || newZip === null) {
-            this.user.set({ name: newName, phone: newPhone, profilepic: newProfilePic, email:this.email, uid:this.uid });
-            console.log(this.email, this.uid)
-            this.address.set({ address: newAddress, city: newCity, state: newState, zip: newZip });
-            alert('Thanks for adding to your profile')
-            this._router.navigate(['/'])
-        }
-        else {
-            this.user.update({ name: newName, phone: newPhone, profilepic: newProfilePic });
-            this.address.update({ address: newAddress, city: newCity, state: newState, zip: newZip });
-            alert('Thanks for updating your profile')
-            this._router.navigate(['/'])
-        }
+    // update(newName: string, newPhone: string, newProfilePic: string, newAddress: string, newCity: string, newState: string, newZip: string, email: string, uid: string) {
+    //     if (newName || newPhone || newProfilePic || newAddress || newCity || newState || newZip === null) {
+    //         this.user.set({ name: newName, phone: newPhone, profilepic: newProfilePic, email:this.email, uid:this.uid });
+    //         // console.log(this.email, this.uid)
+    //         this.address.set({ address: newAddress, city: newCity, state: newState, zip: newZip });
+    //         alert('Thanks for adding to your profile')
+    //         this._router.navigate(['/'])
+    //     }
+    //     else {
+    //         this.user.update({ name: newName, phone: newPhone, profilepic: newProfilePic });
+    //         this.address.update({ address: newAddress, city: newCity, state: newState, zip: newZip });
+    //         alert('Thanks for updating your profile')
+    //         this._router.navigate(['/'])
+    //     }
+    // }
+
+    updateName(newName: string) {
+        this.user.update({ name: newName });
+        alert('Thanks for updating your profile')
+        
+    
     }
+    updatePhone(newPhone: string) {
+        this.user.update({ phone: newPhone })
+    }
+
+    updateAddress(newAddress: string) {
+        this.address.update({ address: newAddress })
+    }
+
+    updateCity(newCity: string) {
+        this.address.update({ city: newCity })
+    }
+
+    updateZip(newZip: string) {
+        this.address.update({ zip: newZip })
+    }
+
+    updateState(newState: string) {
+        this.address.update({ state: newState })
+    }
+
+    //  updatePassword(newPassword: string) {
+    //      this.user.set({ password: newPassword })
+    //  }
+
+
     delete() {
         this.user.remove();
     }

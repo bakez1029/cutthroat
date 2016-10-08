@@ -1,0 +1,119 @@
+{
+"book": [{
+
+    "id": 1,   
+    "Author": "Orson Scott Card",
+    "Title": "Ender's Game",
+    "Printed": true,
+    "Publisher": "Some Publisher",
+    "Price": 12.00,
+    "Forsale": true,
+    "Source":"images/endersgame.jpg",
+    "desc": "Ender's Game is a 1985 military science fiction novel by American author Orson Scott Card. Set in Earth's future, the novel presents an imperiled mankind after two conflicts with the \"buggers\", an insectoid alien species. In preparation for an anticipated second invasion, children, including the novel's protagonist, Ender Wiggin, are trained from a very young age through increasingly difficult games including some in zero gravity, where Ender's tactical genius is revealed."
+},
+{
+    "id": 2,
+    "Author": "J.R.R. Tolkien",
+    "Title": "The Lord Of The Rings",
+    "Printed": true,
+    "Publisher": "Some Publisher",
+    "Price": 15.75,
+    "Forsale": false,
+    "Awards": [
+    "Pulizer",
+    "Best Seller NY Times",
+    "Best SciFi"
+    ],
+    "Source":"images/LotR_book1968.png",
+    "desc": "The Lord of the Rings is an epic high-fantasy novel written by English author J. R. R. Tolkien. The story began as a sequel to Tolkien's 1937 fantasy novel The Hobbit, but eventually developed into a much larger work. Written in stages between 1937 and 1949, The Lord of the Rings is one of the best-selling novels ever written, with over 150 million copies sold."
+},
+{
+    "Author": "Douglas Adams",
+    "Title": "The Hitchhiker's Guide to the Galaxy",
+    "Printed": true,
+    "Publisher": "Some Publisher",
+    "Price": 5.95,
+    "Forsale": true,
+    "Awards": [
+    "Pulizer",
+    "Best Seller NY Times",
+    "Best SciFi"
+    ],
+    "Source":"images/Hitch.jpg",
+    "id": 3,
+    "desc": "Some stuff"
+},
+{
+    "Author": "Jules Verne",
+    "Title": "20,000 Leagues Under the Sea",
+    "Printed": true,
+    "Publisher": "Some Publisher",
+    "Price": 12.00,
+    "Forsale": false,
+    "Source":"images/taylor-20000-leagues-under-the-sea.jpg",
+    "id":3,
+    "desc": "Some stuff"
+
+},
+{
+    "Author": "Samuel R. Delaney",
+    "Title": "Dhalgren",
+    "Printed": true,
+    "Publisher": "Some Publisher",
+    "Price": 12.00,
+    "Forsale": true,
+    "Awards": [
+    "Pulizer",
+    "Best Seller NY Times",
+    "Best SciFi"
+    ],
+    "Source":"images/dhalgren.jpg",
+    "id":4,
+    "desc": "Some stuff"
+},
+{
+    "Author": "HG Wells",
+    "Title": "War of the Worlds",
+    "Printed": true,
+    "Publisher": "Some Publisher",
+    "Price": 12.00,
+    "Forsale": false,
+    "Awards": [
+    "Pulizer",
+    "Best Seller NY Times",
+    "Best SciFi"
+    ],
+    "Source":"images/war.jpg",
+    "id":5,
+    "desc": "Some stuff"
+},
+{
+    "Author": "Isaac Asimov",
+    "Title": "Foundation",
+    "Printed": true,
+    "Publisher": "Some Publisher",
+    "Price": 12.00,
+    "Forsale": true,
+    "Awards": [
+    "Pulizer",
+    "Best Seller NY Times",
+    "Best SciFi"
+    ],
+    "Source":"images/foundation.jpg",
+    "id":6,
+    "desc": "Some stuff"
+},
+{
+    "Author": "Robert Heinlein",
+    "Title": "Stranger in a Strange Land",
+    "Printed": true,
+    "Publisher": "Some Publisher",
+    "Price": 12.00,
+    "Forsale": true,
+    "Source":"images/stranger.jpg",
+    "id":7,
+    "desc": "Some stuff"
+
+        }]
+
+}

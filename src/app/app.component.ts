@@ -6,11 +6,14 @@ import {HTTP_PROVIDERS} from '@angular/http';
 import { WelcomeComponent } from './home/welcome.component';
 import { AdminComponent } from './login/admin.component';
 import { LoginComponent } from './login/login.component';
+import { NewAppComponent } from './newapp/newapp';
 import { CreateComponent } from './login/create.component';
 import { SettingsComponent } from './login/settings.component';
-import { CartComponent } from './login/cart.component';
+import { CartComponent } from './products/cart.component';
+import { CartDetailComponent } from './products/cart-detail.component';
 import { ForgotComponent } from './login/forgot.component';
 import { BarbersComponent } from './barbers/barbers.component';
+import { BarbersDetailComponent } from './barbers/barbers-detail.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contacts.component';
 import { JobsComponent } from './jobs/jobs.component';
@@ -20,6 +23,7 @@ import { ProductListComponent } from './products/product-list.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { ProductService } from './products/product.service';
 import { AppService } from './app.service';
+import { BarberService } from './barbers/barber.service';
 
 const routes: RouterConfig = [
   {
@@ -34,6 +38,10 @@ const routes: RouterConfig = [
     path: 'login',
     component: LoginComponent
   },
+   {
+    path: 'newapp',
+    component: NewAppComponent
+  },
   {
     path: 'create',
     component: CreateComponent
@@ -46,6 +54,10 @@ const routes: RouterConfig = [
     path: 'cart',
     component: CartComponent
   },
+   {
+    path: 'cart/:id',
+    component: CartDetailComponent
+  },
   {
     path: 'forgot',
     component: ForgotComponent
@@ -53,6 +65,10 @@ const routes: RouterConfig = [
   {
     path: 'barbers',
     component: BarbersComponent
+  },
+  {
+    path: 'barber/:id',
+    component: BarbersDetailComponent
   },
   {
     path: 'services',
@@ -77,10 +93,6 @@ const routes: RouterConfig = [
   {
     path: 'products',
     component: ProductListComponent
-    // children: [
-    //   { path: '', component: ProductListComponent },
-    //   { path: 'item/:id', component: ProductDetailComponent },
-    // ]
   },
   {
     path: 'product/:id',
@@ -99,7 +111,7 @@ export const appRouterProviders = [
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   directives: [ROUTER_DIRECTIVES],
-  providers: [HTTP_PROVIDERS, ProductService, AppService]
+  providers: [HTTP_PROVIDERS, ProductService, BarberService, AppService]
 })
 
 export class AppComponent implements OnInit {
@@ -115,7 +127,16 @@ export class AppComponent implements OnInit {
   poop: string;
   username: string;
   users: any;
+  today: any;
+  day: any;
+  daylist: string[];
+  hour: any;
+  minute: any;
+  second: any;
+  prepand: any;
   title: 'Cutthroat'
+
+  
   constructor(public af: AngularFire, private router: Router, private appService: AppService) {
    
     // this.user = appService.user;
@@ -159,13 +180,17 @@ export class AppComponent implements OnInit {
     });
   }
 
+
+
+
+
   setUsers(auth: any) {
     //this.users = this.af.database.list('/users');
     const filtered = this.users.filter(user => user.uid === auth.uid);
     this.user = this.af.database.object('/users/' + filtered[0].$key);
     this.address = this.af.database.object('/users/' + filtered[0].$key + '/address');
-    this.me = this.users[3].uid;
-    this.mike = this.users[4].uid;
+    this.me = this.users[6].uid;
+    this.mike = this.users[5].uid;
     //this.username  = filtered[0].$key.name;
     //console.log('Here are the Admin uids -', this.mike, this.me);
     //console.log('user', this.user, filtered);
@@ -190,6 +215,26 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/'])
     this.authed = false;
   }
+
+      onClick1(): void {
+        this.router.navigate(['/barbers']);
+
+    }
+    onClick2(): void {
+        this.router.navigate(['/products']);
+    }
+
+    onClick3(): void {
+        this.router.navigate(['/artists']);
+    }
+
+    onClick4(): void {
+        this.router.navigate(['/jobs']);
+    }
+    onClick5(): void {
+        this.router.navigate(['/services']);
+    }
+
 
 }
 
