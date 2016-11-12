@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { NewAppComponent } from './newapp/newapp';
 import { CreateComponent } from './login/create.component';
 import { SettingsComponent } from './login/settings.component';
+import { PaymentComponent } from './products/payment.component';
 import { CartComponent } from './products/cart.component';
 import { CartDetailComponent } from './products/cart-detail.component';
 import { ForgotComponent } from './login/forgot.component';
@@ -20,10 +21,16 @@ import { JobsComponent } from './jobs/jobs.component';
 import { PhotosComponent } from './photos/photos.component';
 import { ReviewComponent } from './reviews/review.component';
 import { ProductListComponent } from './products/product-list.component';
+import { ProductList2Component } from './products/product-list2.component';
+import { ProductList3Component } from './products/product-list3.component';
+import { ProductList4Component } from './products/product-list4.component';
+import { OldProductListComponent } from './products/old-product-list.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { ProductService } from './products/product.service';
 import { AppService } from './app.service';
 import { BarberService } from './barbers/barber.service';
+import { ItemPreviewComponent } from "./products/item-preview.component";
+import { CartService } from './products/cart.service';
 
 const routes: RouterConfig = [
   {
@@ -95,9 +102,30 @@ const routes: RouterConfig = [
     component: ProductListComponent
   },
   {
+    path: 'products2',
+    component: ProductList2Component
+  },
+  {
+    path: 'products3',
+    component: ProductList3Component
+  },
+    {
+    path: 'products4',
+    component: ProductList4Component
+  },
+  {
     path: 'product/:id',
     component: ProductDetailComponent
   },
+  {
+    path: 'payment',
+    component: PaymentComponent
+  },
+    {
+    path: 'oldproducts',
+    component: OldProductListComponent
+  },
+  
 
 ];
 
@@ -111,11 +139,12 @@ export const appRouterProviders = [
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   directives: [ROUTER_DIRECTIVES],
-  providers: [HTTP_PROVIDERS, ProductService, BarberService, AppService]
+  providers: [HTTP_PROVIDERS, ProductService, BarberService, AppService, CartService]
 })
 
 export class AppComponent implements OnInit {
   user: any; // FirebaseObjectObservable<any>;
+  cart: FirebaseObjectObservable<any>;
   address: FirebaseObjectObservable<any>;
   uid: string;
   authed: boolean = true;
@@ -127,13 +156,7 @@ export class AppComponent implements OnInit {
   poop: string;
   username: string;
   users: any;
-  today: any;
-  day: any;
-  daylist: string[];
-  hour: any;
-  minute: any;
-  second: any;
-  prepand: any;
+
   title: 'Cutthroat'
 
   
@@ -189,6 +212,7 @@ export class AppComponent implements OnInit {
     const filtered = this.users.filter(user => user.uid === auth.uid);
     this.user = this.af.database.object('/users/' + filtered[0].$key);
     this.address = this.af.database.object('/users/' + filtered[0].$key + '/address');
+    this.cart = this.af.database.object('/users/' + filtered[0].$key + '/cart');
     this.me = this.users[6].uid;
     this.mike = this.users[5].uid;
     //this.username  = filtered[0].$key.name;

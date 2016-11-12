@@ -1,111 +1,924 @@
+<style>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+	/*	Reset & General
+---------------------------------------------------------------------- */
+	
+	#grid-selector {
+		height: 10px;
+		width: 1291px;
+		padding: 40px 0 40px 30px;
+		float: left;
+		color: #5d5f68;
+		font-size: 14px;
+	}
+	
+	#grid-menu {
+		float: right;
+		width: 105px;
+	}
+	
+	#grid-menu ul {
+		width: 65px;
+		float: right;
+		position: relative;
+		top: -1px;
+	}
+	
+	#grid-menu li {
+		float: right;
+		width: 25px;
+		height: 25px;
+		list-style: none;
+	}
+	
+	#grid-menu li a {
+		display: block;
+		width: 25px;
+		height: 25px;
+		background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/grid-menu.png") 0 0 no-repeat;
+	}
+	
+	#grid-menu li.smallGrid {
+		margin-right: 7px;
+	}
+	
+	#grid-menu li.smallGrid a {
+		background-position: 0 -33px;
+	}
+	
+	#grid-menu li.largeGrid a {
+		background-position: -37px 0;
+	}
+	
+	#grid-menu li.smallGrid a.active {
+		background-position: 0 0;
+	}
+	
+	#grid-menu li.largeGrid a.active {
+		background-position: -37px -33px;
+	}
+	
+	#grid {
+		width: 1335px;
+		position: absolute;
+		left: 340px;
+		height: 1200px;
+		top: 180px;
+	}
+	
+	#sidebar {
+		float: left;
+		background: #fff;
+		width: 275px;
+		padding: 13px 0 0 45px;
+		height: 100%;
+	
+	}
+	
+	#sidebar h3 {
+		color: #262626;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 700;
+		padding: 35px 0 10px 0;
+		letter-spacing: 1px;
+		clear: both;
+	}
+	
+	#cart {
+		padding: 0px;
+	}
+	
+	#cart .empty {
+		font-style: italic;
+		color: #a0a3ab;
+		font-size: 14px;
+		letter-spacing: 1px;
+	}
+	
+	#sidebar .checklist {
+		padding: 0;
+	}
+	
+	.checklist ul li {
+		font-size: 14px;
+		font-weight: 400;
+		list-style: none;
+		padding: 7px 0 7px 23px;
+	}
+	
+	.checklist li span {
+		float: left;
+		width: 11px;
+		height: 11px;
+		margin-left: -23px;
+		margin-top: 4px;
+		border: 1px solid #d1d3d7;
+		position: relative;
+	}
+	
+	.sizes li span,
+	.categories .sizes li {
+		-webkit-transition: all 300ms ease-out;
+		-moz-transition: all 300ms ease-out;
+		-ms-transition: all 300ms ease-out;
+		-o-transition: all 300ms ease-out;
+		transition: all 300ms ease-out;
+	}
+	
+	.checklist li a {
+		color: #676a74;
+		text-decoration: none;
+		-webkit-transition: all 300ms ease-out;
+		-moz-transition: all 300ms ease-out;
+		-ms-transition: all 300ms ease-out;
+		-o-transition: all 300ms ease-out;
+		transition: all 300ms ease-out;
+	}
+	
+	.checklist li a:hover {
+		color: #222;
+		-webkit-transition: all 300ms ease-out;
+		-moz-transition: all 300ms ease-out;
+		-ms-transition: all 300ms ease-out;
+		-o-transition: all 300ms ease-out;
+		transition: all 300ms ease-out;
+	}
+	
+	.checklist a:hover span {
+		border-color: #a6aab3;
+	}
+	
+	.sizes a:hover span,
+	.categories a:hover span {
+		border-color: #a6aab3;
+		-webkit-transition: all 300ms ease-out;
+		-moz-transition: all 300ms ease-out;
+		-ms-transition: all 300ms ease-out;
+		-o-transition: all 300ms ease-out;
+		transition: all 300ms ease-out;
+	}
+	
+	.checklist a span span {
+		border: none;
+		margin: 0;
+		float: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	
+	.checklist a .x {
+		display: block;
+		width: 0;
+		height: 2px;
+		background: #5ff7d2;
+		top: 6px;
+		left: 2px;
+		-ms-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		-webkit-transition: all 50ms ease-out;
+	}
+	
+	.checklist a .x.animate {
+		width: 4px;
+		-webkit-transition: all 100ms ease-in;
+		-moz-transition: all 100ms ease-in;
+		-ms-transition: all 100ms ease-in;
+		-o-transition: all 100ms ease-in;
+		transition: all 100ms ease-in;
+	}
+	
+	.checklist a .y {
+		display: block;
+		width: 0px;
+		height: 2px;
+		background: #5ff7d2;
+		top: 4px;
+		left: 3px;
+		-ms-transform: rotate(13deg);
+		-webkit-transform: rotate(135deg);
+		transform: rotate(135deg);
+		-webkit-transition: all 50ms ease-out;
+	}
+	
+	.checklist a .y.animate {
+		width: 8px;
+		-webkit-transition: all 100ms ease-out;
+		-moz-transition: all 100ms ease-out;
+		-ms-transition: all 100ms ease-out;
+		-o-transition: all 100ms ease-out;
+		transition: all 100ms ease-out;
+	}
+	
+	.checklist .checked span {
+		border-color: #8d939f;
+	}
+	
+	.colors ul,
+	.sizes ul {
+		float: left;
+		width: 130px;
+	}
+	
+	.colors ul li {
+		padding-left: 21px;
+	}
+	
+	.colors a span {
+		border: none;
+		position: relative;
+		border-radius: 100%;
+		background-color: #eae3d3;
+		width: 13px;
+		height: 13px;
+		margin-left: -20px;
+	}
+	
+	.colors a:hover span {
+		width: 15px;
+		height: 15px;
+		margin-top: 3px;
+		margin-left: -21px;
+	}
+	
+	#sidebar img {
+		margin-top: 6px;
+	}
+	
+	.product {
+		position: relative;
+		border: 2px solid #eee;
+		width: 306px;
+		height: 480px;
+		float: left;
+		padding-left: 40px;
+		padding-right: 30px;
+		margin-left: 40px;
+		margin-right: 30px;
+	}
+	
+	.product img {
+		width: 200px;
+		text-align: center;
+	}
+	
+	.stats-container {
+		background: #000;
+		color: #db2226;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 100px;
+		padding: 5px 5px 5px 5px;
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+	}
+	
+	.stats-container .product_name {
+		font-size: 15px;
+		color: #db2226;
+		font-weight: 700;
+	}
+	
+	.stats-container p {
+		font-size: 15px;
+		color: #db2226;
+	}
+	
+	.stats-container .product_price {
+		color: #db2226;
+		font-size: 22px;
+		font-weight: 600;
+	}
+	
+	.image_overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(top, #c0c0c0 0%, #ffffff 25%, #ffffff 50%, #c0c0c0 75%, #c0c0c0 100%);
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c0c0c0), color-stop(0.25, #ffffff), color-stop(0.5, #ffffff), color-stop(0.75, #c0c0c0), color-stop(1, #c0c0c0));
+		background-image: -moz-linear-gradient(top, #c0c0c0 0%, #ffffff 25%, #ffffff 50%, #c0c0c0 75%, #c0c0c0 100%);
+		background-image: -o-linear-gradient(top, #c0c0c0 0%, #ffffff 25%, #ffffff 50%, #c0c0c0 75%, #c0c0c0 100%);
+		background-image: -ms-linear-gradient(top, #c0c0c0 0%, #ffffff 25%, #ffffff 50%, #c0c0c0 75%, #c0c0c0 100%);
+		opacity: 0;
+	}
+	
+	.product:hover .image_overlay {
+		opacity: 0.7;
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+	}
+	
+	.product-options {
+		padding: 0;
+	}
+	
+	.product-options strong {
+		font-weight: 700;
+		color: #393c45;
+		font-size: 14px;
+	}
+	
+	.product-options span {
+		color: #969699;
+		font-size: 14px;
+		display: block;
+		margin-bottom: 8px;
+	}
+	
+	.add_to_cart {
+		position: absolute;
+		top: 80px;
+		left: 50%;
+		width: 152px;
+		font-size: 15px;
+		margin-left: -78px;
+		border: 2px solid #fff;
+		color: #fff;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 700;
+		padding: 10px 0;
+		opacity: 0;
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+	}
+	
+	.add_to_cart:hover {
+		background: #fff;
+		color: #5ff7d2;
+		cursor: pointer;
+	}
+	
+	.make3D.animate .add_to_cart {
+		opacity: 1;
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+	}
+	
+	.view_gallery {
+		position: absolute;
+		top: 144px;
+		left: 50%;
+		width: 152px;
+		font-size: 15px;
+		margin-left: -78px;
+		border: 2px solid #fff;
+		color: #fff;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 700;
+		padding: 10px 0;
+		opacity: 0;
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+	}
+	
+	.view_gallery:hover {
+		background: #fff;
+		color: #5ff7d2;
+		cursor: pointer;
+	}
+	
+	.make3D.animate .view_gallery {
+		opacity: 1;
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+	}
+	
+	div.colors div {
+		margin-top: 3px;
+		width: 15px;
+		height: 15px;
+		margin-right: 5px;
+		float: left;
+	}
+	
+	div.colors div span {
+		width: 15px;
+		height: 15px;
+		display: block;
+		border-radius: 50%;
+	}
+	
+	div.colors div span:hover {
+		width: 17px;
+		height: 17px;
+		margin: -1px 0 0 -1px;
+	}
+	
+	div.c-blue span {
+		background: #6e8cd5;
+	}
+	
+	div.c-red span {
+		background: #f56060;
+	}
+	
+	div.c-green span {
+		background: #44c28d;
+	}
+	
+	div.c-white span {
+		background: #fff;
+		width: 14px;
+		height: 14px;
+		border: 1px solid #e8e9eb;
+	}
+	
+	div.shadow {
+		width: 335px;
+		height: 520px;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		display: none;
+		background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+		background: -o-linear-gradient(right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+		background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+		background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+	}
+	
+	.product-back div.shadow {
+		z-index: 10;
+		opacity: 1;
+		background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+		background: -o-linear-gradient(right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+		background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+		background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+	}
+	
+	div.floating-cart {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 315px;
+		height: 480px;
+		background: #fff;
+		z-index: 200;
+		overflow: hidden;
+		box-shadow: 0px 5px 31px -1px rgba(0, 0, 0, 0.15);
+		display: none;
+	}
+	
+	div.floating-cart .stats-container {
+		display: none;
+	}
+	
+	div.floating-cart .product-front {
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+	
+	div.floating-cart.moveToCart {
+		left: 75px !important;
+		top: 55px !important;
+		width: 47px;
+		height: 47px;
+		-webkit-transition: all 800ms ease-in-out;
+		-moz-transition: all 800ms ease-in-out;
+		-ms-transition: all 800ms ease-in-out;
+		-o-transition: all 800ms ease-in-out;
+		transition: all 800ms ease-in-out;
+	}
+	
+	body.MakeFloatingCart div.floating-cart.moveToCart {
+		left: 90px !important;
+		top: 140px !important;
+		width: 21px;
+		height: 22px;
+		box-shadow: 0px 5px 31px -1px rgba(0, 0, 0, 0);
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-ms-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+	}
+	
+	div.cart-icon-top {
+		background: #fff url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/cart.png") 0 -3px no-repeat;
+		margin: 0;
+		width: 21px;
+		height: 3px;
+		z-index: 1;
+		top: 140px;
+		left: 90px;
+	}
+	
+	div.cart-icon-bottom {
+		background: #fff url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/cart.png") 0 -3px no-repeat;
+		margin: 0;
+		width: 21px;
+		height: 19px;
+		z-index: 1;
+		top: 143px;
+		left: 90px;
+	}
+	
+	body.MakeFloatingCart div.cart-icon-top {
+		z-index: 30;
+	}
+	
+	body.MakeFloatingCart div.cart-icon-bottom {
+		z-index: 300;
+	}
+	
+	.cart-item {
+		padding: 11px 0 5px 110px;
+		height: 62px;
+		width: 210px;
+		margin-left: -45px;
+		position: relative;
+		background: #fff;
+		-webkit-transition: all 1000ms ease-out;
+		-moz-transition: all 1000ms ease-out;
+		-ms-transition: all 1000ms ease-out;
+		-o-transition: all 1000ms ease-out;
+		transition: all 1000ms ease-out;
+	}
+	
+	.cart-item.flash {
+		background: #fffeb0;
+	}
+	
+	.cart-item-border {
+		position: absolute;
+		bottom: 0;
+		left: 45px;
+		background: #edeff0;
+		height: 1px;
+		width: 230px;
+	}
+	
+	.cart-item .img-wrap {
+		width: 50px;
+		height: 50px;
+		overflow: hidden;
+		border: 1px solid #edeff0;
+		float: left;
+		margin-left: -65px;
+	}
+	
+	.cart-item img {
+		width: 100%;
+		position: relative;
+		top: -10px;
+	}
+	
+	.cart-item strong {
+		color: #5ff7d2;
+		font-size: 16px;
+	}
+	
+	.cart-item span {
+		color: #393c45;
+		display: block;
+		font-size: 14px;
+	}
+	
+	.cart-item .delete-item {
+		background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/delete-item.png") 0 0 no-repeat;
+		width: 15px;
+		height: 15px;
+		float: right;
+		margin-right: 18px;
+		display: none;
+	}
+	
+	.cart-item:hover .delete-item {
+		display: block;
+		cursor: pointer
+	}
+	
+	#checkout {
+		border: 2px solid #5ff7d2;
+		font-size: 13px;
+		font-weight: 700;
+		padding: 3px 9px;
+		position: absolute;
+		top: 137px;
+		left: 181px;
+		color: #5ff7d2;
+		display: none;
+	}
+	
+	.product.large {
+		width: 639px;
+		margin-bottom: 25px;
+		overflow: hidden;
+		-webkit-transition: all 500ms ease-in-out;
+		-moz-transition: all 500ms ease-in-out;
+		-ms-transition: all 500ms ease-in-out;
+		-o-transition: all 500ms ease-in-out;
+		transition: all 500ms ease-in-out;
+	}
+	/* ---------------- */
+	
+	.floating-image-large {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	
+	.info-large {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0px;
+		padding: 42px;
+		width: 245px;
+		height: 395px;
+		-webkit-transition: all 500ms ease-out;
+		-moz-transition: all 300ms ease-out;
+		-ms-transition: all 300ms ease-out;
+		-o-transition: all 300ms ease-out;
+		transition: all 300ms ease-out;
+	}
+	
+	.large .info-large {
+		left: 310px;
+		-webkit-transition: all 300ms ease-out;
+		-moz-transition: all 300ms ease-out;
+		-ms-transition: all 300ms ease-out;
+		-o-transition: all 300ms ease-out;
+		transition: all 300ms ease-out;
+	}
+	
+	.info-large h4 {
+		text-transform: uppercase;
+		font-size: 28px;
+		color: #000;
+		font-weight: 400;
+		padding: 0;
+	}
+	
+	div.sku {
+		font-weight: 700;
+		color: #d0d0d0;
+		font-size: 12px;
+		padding-top: 11px;
+	}
+	
+	div.sku strong {
+		color: #000;
+	}
+	
+	.price-big {
+		font-size: 34px;
+		font-weight: 600;
+		color: #5ff7d2;
+		margin-top: 21px;
+	}
+	
+	.price-big span {
+		color: #d0d0d0;
+		font-weight: 400;
+		text-decoration: line-through;
+	}
+	
+	.add-cart-large {
+		border: 3px solid #000;
+		font-size: 17px;
+		background: #fff;
+		text-transform: uppercase;
+		font-weight: 700;
+		padding: 10px;
+		font-family: "Open Sans", sans-serif;
+		width: 246px;
+		margin-top: 38px;
+		margin-left: 30px;
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-ms-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+	}
+	
+	.add-cart-large:hover {
+		background-color: #db2226;
+		color: #000;
+		border-color: #000;
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-ms-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out;
+		cursor: pointer;
+	}
+	
+	.info-large h3 {
+		letter-spacing: 1px;
+		color: #262626;
+		text-transform: uppercase;
+		font-size: 14px;
+		clear: left;
+		margin-top: 20px;
+		font-weight: 700;
+		margin-bottom: 3px;
+	}
+	
+	.colors-large {
+		margin-bottom: 38px;
+	}
+	
+	.colors-large li {
+		float: left;
+		list-style: none;
+		margin-right: 7px;
+		width: 16px;
+		height: 16px;
+	}
+	
+	.colors-large li a {
+		float: left;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+	}
+	
+	.colors-large li a:hover {
+		width: 19px;
+		height: 19px;
+		position: relative;
+		top: -1px;
+		left: -1px;
+	}
+	
+	.sizes-large {}
+	
+	.sizes-large span {
+		font-weight: 600;
+		color: #b0b0b0;
+	}
+	
+	.sizes-large span:hover {
+		color: #000;
+		cursor: pointer;
+	}
+	
+	.product.large:hover {
+		box-shadow: 0px 5px 31px -1px rgba(0, 0, 0, 0.15);
+	}
+</style>
+
+<div class='panel panel-primary hidden-xs center-block img-responsive' style="height: 100%; background-color:#fff">
+	<div class='panel-heading'>
+		<center>{{pageTitle}}</center>
+	</div>
+	<div class='panel-body' style="height: 100%">
 
 
-    <div style="padding-left:10px; padding-right:10px; padding-top:80px; padding-bottom:80px">
-       
-<!--        
-            <span class="dispBlock blackWhite" style="padding-left:10px"><h3>Product not yet available
-            online.</h3></span>
-        <br>
-        <span class="dispBlock blackWhite" style="padding-left:10px">Visit us in store to purchase.</span>
-        <br>-->
+		<div id="sidebar">
+			<div class="cart-icon-top">
+				</div>
+				<div class="cart-icon-bottom">
+				</div>
+			<h3>CART</h3>
+	
+			<div id="cart">
+				<span class="empty">No items in cart.</span>
+			</div>
 
-        <div class='panel panel-primary hidden-xs center-block img-responsive' style="height: 100%; width:1244px; background-color:#fff">
-            <div class='panel-heading'>
-                <center>{{pageTitle}}</center>
-            </div>
-            <div class='panel-body'>
-                <div class='row'>
-                    <br>
-                 
-                    <!--<div class='col-md-2'>Search for:</div>-->
-                    <div style="float:left; height: 90px; width:300px">
-                        <i class="fa fa-search fa-2x" style="padding-left:10px; padding-top:10px"></i>
-                        <input type='text' [(ngModel)]='listFilter' style="padding-left:10px; width:250px">
-</div>
-                <!--<div class='row'>
-                    <div class='col-md-6'>
-                        <h3>Filtered by: {{listFilter}} </h3>
-                        <br>
-                        <button class='mat-btn waves-effect waves-light red darken-3' (click)='toggleImage()'>
-                                {{showImage ? 'Hide' : 'Show'}} Image
-                            </button>
-                        <br>
-                        <br>
-                    </div>
-                </div>-->
-                
-                    <table class='table' *ngIf='products && products.length'>
-                        <thead>
-                            <tr>
-                                <th>Brand</th>
-                                <th>Product</th>
-                                <th>Image</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor='let product of products | productFilter:listFilter'>
-                                <td>{{ product.productBrand }}</td>
-                                <td><a [routerLink]="['/product', product.productId]">{{product.productName}}</a></td>
-                                <td><img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth'
-                                        [style.margin.px]='imageMargin'></td>
-                                <td>${{ product.price }}.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-         
-</div>
-           </div>
-           </div>
+			<h3>CATEGORIES</h3>
+			<div class="checklist categories">
+				<ul>
+					<li><a href=""><span></span>New Arrivals</a></li>
+					<li><a href=""><span></span>Hair Products</a></li>
+					<li><a href=""><span></span>Beard Products</a></li>
+					<li><a href=""><span></span>Pomade</a></li>
+					<li><a href=""><span></span>Beard Oil</a></li>
+					<li><a href=""><span></span>Mustache Wax</a></li>
+					<li><a href=""><span></span>Aftershave</a></li>
+					<li><a href=""><span></span>Shampoo</a></li>
+					<li><a href=""><span></span>T-shirts</a></li>
+				</ul>
+			</div>
 
-                
-<!--MOBILE-->
+			<!--<h3>COLORS</h3>
+			<div class="checklist colors">
+				<ul>
+					<li><a href=""><span></span>Beige</a></li>
+					<li><a href=""><span style="background:#222"></span>Black</a></li>
+					<li><a href=""><span style="background:#6e8cd5"></span>Blue</a></li>
+					<li><a href=""><span style="background:#f56060"></span>Brown</a></li>
+					<li><a href=""><span style="background:#44c28d"></span>Green</a></li>
+				</ul>
 
-                <div class='visible-xs'>
-<br>
-                        
-                        <center><span><i class="fa fa-search fa-2x"></i><input type='text' [(ngModel)]='listFilter' style="padding-left:10px; width:250px"></span></center>
-          
-              <br>
-              <br>
-              
-                    <div class="panel panel-primary" style="border: 1px solid #696969">
-             
-            
-                    <table class='table' *ngIf='products && products.length'>
-                        <thead>
-                            <tr>
-                                <th>Brand</th>
-                                <th>Product</th>
-                                <th>Image</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor='let product of products | productFilter:listFilter' style="border-bottom: 15px solid #696969">
+				<ul>
+					<li><a href=""><span style="background:#999"></span>Grey</a></li>
+					<li><a href=""><span style="background:#f79858"></span>Orange</a></li>
+					<li><a href=""><span style="background:#b27ef8"></span>Purple</a></li>
+					<li><a href=""><span style="background:#f56060"></span>Red</a></li>
+					<li><a href=""><span style="background:#fff;border: 1px solid #e8e9eb;width:13px;height:13px;"></span>White</a></li>
+				</ul>
+			</div>
 
-                                <td style="background-color:#f6f6f6; border-bottom: 1px solid #d3d3d3">
-                                    <center>
-                                        <a [routerLink]="['/product', product.productId]">{{ product.productBrand }}&nbsp; -&nbsp;{{product.productName}}</a>
-                                    </center>
-                                </td>
+			<h3>SIZES</h3>
+			<div class="checklist sizes">
+				<ul>
+					<li><a href=""><span></span>XS</a></li>
+					<li><a href=""><span></span>S</a></li>
+					<li><a href=""><span></span>M</a></li>
+				</ul>
 
-                                <td>
-                                    <br>
-                                    <center><img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth'
-                                            [style.margin.px]='imageMargin'></center>
-                                    <br>
-                                    <center><b>Price : ${{ product.price }}.00</b></center>
-                                    
-                                </td>
-                                <br>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                </div>
-        
-                <router-outlet></router-outlet>
-       
+				<ul>
+					<li><a href=""><span></span>L</a></li>
+					<li><a href=""><span></span>XL</a></li>
+					<li><a href=""><span></span>XXL</a></li>
+				</ul>
+			</div>
+
+			<h3>PRICE RANGE</h3>
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/price-range.png" alt="" />-->
+		</div>
+		<br>
+		<div id="grid-selector" style="height:80px">
+			<div id="grid-menu">
+				View:
+				<ul>
+					<li class="largeGrid">
+						<a class="active" [routerLink]="['/products']"></a>
+					</li>
+					<li class="smallGrid">
+						<a [routerLink]="['/oldproducts']"></a>
+					</li>
+				</ul>
+			</div>
+
+			<span style="margin-top:27px; padding-left:27px">Showing 1–9 of 34 results</span>
+		</div>
+
+
+
+
+
+
+		<table class="table" style="width:1250px; float: left" *ngIf='products && products.length'>
+			<tbody>
+				<tr class="product" *ngFor='let product of products | pFilter' style="margin-bottom:25px">
+					<td rowspan="3" style="border:none">
+
+						<img [src]='product.imageUrl' style="height:200px; width:200px">
+
+						<div class="image_overlay"><button class="add-cart-large" (click)='cartPurchase()'>Add To Cart</button><br><button class="add-cart-large"><a style="color: black !important" [routerLink]="['/product', product.productId]">View Details</a></button></div>
+					</td>
+					<div class="stats-container" style="margin-top:160px">
+
+						<span><center>{{ product.productBrand }}</center></span>
+						<p>
+							<center>{{product.productName}}</center>
+						</p>
+						<span class="product_price"><center>${{ product.price }}</center></span>
+					</div>
+
+
+
+
+				</tr>
+			</tbody>
+
+		</table>
+
+    <div style="text-align:center">
+      <ul class="pagination">
+        <li>
+          <a aria-label="Previous" class="disabled">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li><a [routerLink]="['/products']">1</a></li>
+        <li><a [routerLink]="['/products2']">2</a></li>
+        <li><a [routerLink]="['/products3']">3</a></li>
+        <li><a [routerLink]="['/products4']">4</a></li>
+        <li><a class="disabled">5</a></li>
+        <li>
+          <a aria-label="Next" [routerLink]="['/products2']">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
     </div>
+
+
+	</div>
+</div>

@@ -42,7 +42,7 @@ export class CreateComponent {
       this.af.auth.createUser({ email: email, password: password }).then((auth) => {
         this.af.auth.login({ email: email, password: password, provider: AuthProviders.Password }).then((loginData) =>
           // console.log(loginData),
-          this.users.push({ email: email, password: password, uid: auth.uid, name: "User", profilepic: "http://www.homestyler.com/resource/images/en_US/userprofile/default-user-image.png"})),
+          this.users.push({ email: email, password: password, uid: auth.uid, cart: "", name: "User", profilepic: "http://www.homestyler.com/resource/images/en_US/userprofile/default-user-image.png"})),
           this.router.navigate(['/']);
 
       });

@@ -15,7 +15,7 @@ bootstrap(AppComponent, [
   disableDeprecatedForms(), // disable deprecated forms
   provideForms(), // enable new forms module
   defaultFirebase({
-    apiKey: "",
+    apiKey: "AIzaSyCnEW-TiTxpDbiaoyEx-EtfNDH3W8p5prc",
     authDomain: "project-3685012128358143188.firebaseapp.com",
     databaseURL: "https://project-3685012128358143188.firebaseio.com",
     storageBucket: "project-3685012128358143188.appspot.com",

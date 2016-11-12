@@ -3,8 +3,9 @@ export interface User {
     phone: string;
     email: string;
     address: {
-        street?: string; // required
-        postcode?: string;
+        street?: string; // required       
+        city: string;
         state: string;
+        postcode?: string;
     }
 }

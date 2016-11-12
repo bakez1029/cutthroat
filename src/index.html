@@ -3,28 +3,35 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cutthroat Barbershop</title>
+  <link rel="icon" type="image/png" href="/img/barbs.png" />
+  <!--CSS-->
   <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="./css/site.css" />
+  <link type="text/css" rel="stylesheet" href="./css/mymaterialize.css">
+
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="./css/mymaterialize.css">
+  <!-- Polyfill(s) for older browsers -->
+
+  
   <base href="/"> {{#unless environment.production}}
   <script src="/ember-cli-live-reload.js" type="text/javascript"></script> {{/unless}}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="/img/barbs.png" />
 </head>
 
 <body>
   <app-root>Loading...</app-root>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
   <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-   {{#each scripts.polyfills}}
+  <script src="./js/menu.js"></script>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+ 
+  {{#each scripts.polyfills}}
   <script src="{{.}}"></script> {{/each}}
   <script>
       System.import('system-config.js').then(function () {

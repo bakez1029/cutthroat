@@ -1,0 +1,101 @@
+<div style="padding-left:10px; padding-right:10px; padding-top:80px; padding-bottom:80px">
+
+	<!--<span class="dispBlock blackWhite" style="padding-left:10px"><h3>Product not yet available
+            online.</h3></span>
+        <br>
+        <span class="dispBlock blackWhite" style="padding-left:10px">Visit us in store to purchase.</span>
+        <br>-->
+
+	<div class='panel panel-primary center-block img-responsive' style="height: 100%; width:1244px">
+		<div class='panel-heading'>
+			<center>{{pageTitle}}</center>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+
+
+		<div class="container">
+			<div class="row">
+				<div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title" style="height: 50px"><img class="center-block" src="http://i76.imgup.net/accepted_c22e0.png"></h3>
+						</div>
+						<div class="panel-body">
+				
+								<form role="form" id="payment-form" (submit)="getCardData(number.value, month.value,year.value,cvc.value)" action="post">
+									<div class="row">
+										<div class="col-s12">
+											<div class="form-group">
+
+												<center><label for="cardNumber">CARD NUMBER</label></center>
+												<div class="input-group">
+													
+														<input #number type="text" class="form-control center-block" id="cardNumber" placeholder="Valid Card Number" required autofocus data-stripe="number"
+														/>
+														<!--<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>-->
+													
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<center><label for="expMonth">EXPIRATION DATE</label><label for="cvCode" style="padding-left:125px">CV CODE</label></center>
+										<br>
+										<div class="row">
+
+
+											<span><input #month type="text" class="form-control" id="expMonth" placeholder="MM" required data-stripe="exp_month" style="width:25px"/>
+											&nbsp;&nbsp;/&nbsp;&nbsp;
+											<input #year type="text" class="form-control" name="expYear" placeholder="YY" required data-stripe="exp_year" style="width:25px"/>
+
+											<input #cvc type="password" class="form-control" id="cvCode" placeholder="CV" required data-stripe="cvc" style="width:40px"/></span>
+											
+
+
+
+
+
+
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-xs-12">
+											<center><button class="mat-btn waves-effect waves-light red darken-3" type="submit">Purchase</button></center>
+										</div>
+									</div>
+									<div class="row" style="display:none;">
+										<div class="col-xs-12">
+											<p class="payment-errors"></p>
+										</div>
+									</div>
+								</form>
+					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<br>
+		<br>
+		<br>
+
+		<div class='panel-footer' *ngIf="authed">
+			<a class='mat-btn waves-effect waves-light red darken-3' (click)='onBack()' style='width:80px; color: white !important'>
+				<i class='glyphicon glyphicon-chevron-left'></i>
+			</a>
+			<!--
+			<a class='mat-btn waves-effect waves-light red darken-3' style='width:180px; color: white !important; float:right'>
+				Purchase
+			</a>-->
+			<a class='mat-btn waves-effect waves-light red darken-3' style='width:180px; color: white !important; float:right'>Purchase</a>			<span style="float:right; padding-top:8px"> Total: ${{cartService.getTotalPrice()}}.00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		</div>
+
+	</div>

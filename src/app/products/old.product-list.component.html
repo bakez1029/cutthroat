@@ -1,0 +1,172 @@
+<style>
+#grid-menu {
+		float: right;
+		width: 105px;
+	}
+	
+	#grid-menu ul {
+		width: 65px;
+		float: right;
+		position: relative;
+		top: -1px;
+	}
+	
+	#grid-menu li {
+		float: right;
+		width: 25px;
+		height: 25px;
+		list-style: none;
+	}
+	
+	#grid-menu li a {
+		display: block;
+		width: 25px;
+		height: 25px;
+		background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/grid-menu.png") 0 0 no-repeat;
+	}
+	
+	#grid-menu li.smallGrid {
+		margin-right: 7px;
+	}
+	
+	#grid-menu li.smallGrid a {
+		background-position: 0 -33px;
+	}
+	
+	#grid-menu li.largeGrid a {
+		background-position: -37px 0;
+	}
+	
+	#grid-menu li.smallGrid a.active {
+		background-position: 0 0;
+	}
+	
+	#grid-menu li.largeGrid a.active {
+		background-position: -37px -33px;
+	}
+}
+</style>
+
+<div style="padding-left:10px; padding-right:10px; padding-top:80px; padding-bottom:80px">
+
+	<!--        
+            <span class="dispBlock blackWhite" style="padding-left:10px"><h3>Product not yet available
+            online.</h3></span>
+        <br>
+        <span class="dispBlock blackWhite" style="padding-left:10px">Visit us in store to purchase.</span>
+        <br>-->
+
+	<div class='panel panel-primary hidden-xs center-block img-responsive' style="height: 100%; width:1244px; background-color:#fff">
+		<div class='panel-heading'>
+			<center>{{pageTitle}}</center>
+		</div>
+		<div class='panel-body'>
+			<div class='row'>
+				<br>
+
+				<!--<div class='col-md-2'>Search for:</div>-->
+				<div style="float:left; height: 90px; width:300px">
+					<i class="fa fa-search fa-2x" style="padding-left:10px; padding-top:10px"></i>
+					<input type='text' [(ngModel)]='listFilter' style="padding-left:10px; width:250px">
+
+				</div>
+				<div id="grid-selector" style="height:80px">
+					<div id="grid-menu">
+						View:
+						<ul>
+							<li class="largeGrid">
+								<a [routerLink]="['/products']"></a>
+							</li>
+						
+							<li class="smallGrid">
+								<a class="active" [routerLink]="['/oldproducts']"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!--<div class='row'>
+                    <div class='col-md-6'>
+                        <h3>Filtered by: {{listFilter}} </h3>
+                        <br>
+                        <button class='mat-btn waves-effect waves-light red darken-3' (click)='toggleImage()'>
+                                {{showImage ? 'Hide' : 'Show'}} Image
+                            </button>
+                        <br>
+                        <br>
+                    </div>
+                </div>-->
+
+				<table class='table' *ngIf='products && products.length'>
+					<thead>
+						<tr>
+							<th>Brand</th>
+							<th>Product</th>
+							<th>Image</th>
+							<th>Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor='let product of products | productFilter:listFilter'>
+							<td>{{ product.productBrand }}</td>
+							<td><a [routerLink]="['/product', product.productId]">{{product.productName}}</a></td>
+							<td><img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'></td>
+							<td>${{ product.price }}.00</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!--MOBILE-->
+
+	<div class='visible-xs'>
+		<br>
+
+		<center><span><i class="fa fa-search fa-2x"></i><input type='text' [(ngModel)]='listFilter' style="padding-left:10px; width:250px"></span></center>
+
+		<br>
+		<br>
+
+		<div class="panel panel-primary" style="border: 1px solid #696969">
+
+
+			<table class='table' *ngIf='products && products.length'>
+				<thead>
+					<tr>
+						<th>Brand</th>
+						<th>Product</th>
+						<th>Image</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor='let product of products | productFilter:listFilter' style="border-bottom: 15px solid #696969">
+
+						<td style="background-color:#f6f6f6; border-bottom: 1px solid #d3d3d3">
+							<center>
+								<a [routerLink]="['/product', product.productId]">{{ product.productBrand }}&nbsp; -&nbsp;{{product.productName}}</a>
+							</center>
+						</td>
+
+						<td>
+							<br>
+							<center><img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'></center>
+							<br>
+							<center><b>Price : ${{ product.price }}.00</b></center>
+
+						</td>
+						<br>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+	<router-outlet></router-outlet>
+
+</div>

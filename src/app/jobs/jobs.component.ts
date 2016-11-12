@@ -41,8 +41,9 @@ export class JobsComponent implements OnInit {
         email:'',
         address: {
             street: '',
-            postcode: '', // set default value to 8000
+            city: '',
             state: '',
+            postcode: '', // set default value to 8000
         }
         
     };
@@ -52,8 +53,8 @@ export class JobsComponent implements OnInit {
 
 
   onSubmit(form: any)  {
-    this.submitted = true;
-    this.form = form;
+     this.submitted = true;
+     this.form = form;
      this.users.push({ApplicantInfo: form});
           this.router.navigate(['/']),
           alert("Your information was submitted.");

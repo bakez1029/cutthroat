@@ -2,7 +2,7 @@
     <div style="padding-left:10px; padding-right:10px;padding-top:80px; padding-bottom:80px">
 
    
-        <div class='panel panel-primary center-block img-responsive' style="height: 1152px; width:1244px">
+        <div class='panel panel-primary center-block img-responsive' style="height: 1352px; width:1244px">
             <div class='panel-heading'>
                 <center>{{pageTitle}}</center>
             </div>
@@ -77,10 +77,10 @@
             </small>
                         </div>
 
-                        <!--postcode-->
+                        <!--city-->
                         <div>
-                            <label>Postal code</label>
-                            <input type="text" name="postcode" [(ngModel)]="user.address.postcode">
+                            <label>City</label>
+                            <input type="text" name="city" [(ngModel)]="user.address.city">
                         </div>
                         <br>
                         <div>
@@ -89,18 +89,22 @@
           <option *ngFor="let s of states" [value]="s">{{ s }}</option>
       </select>
                         </div>
+                         <br>
+                    <br>
+                  
+                        <div>
+                            <label>Postal code</label>
+                            <input type="text" name="postcode" [(ngModel)]="user.address.postcode">
+                        </div>
+                        <br>
+                        
                     </div>
                     <br>
                     <br>
                     <br>
                     <br>
                     <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <button type="submit" class="btn btn-default" [disabled]="!jobForm.form.valid" style="float:right">Submit</button>
+                    <input type="submit" class="btn btn-default" value="Submit" [disabled]="!jobForm.form.valid" style="float:right">
                 </form>
 </div>
 

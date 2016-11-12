@@ -15,13 +15,16 @@
       <div class='col s6'>
     <div class="z-depth-1 img-responsive" style="padding: 32px 48px 60px 48px; width:550px; border: 1px solid #EEE;">
 
-    <h4><center>Applicants</center></h4>
+    <h4><center>All Job Applicants</center></h4>
     <br>
     <br>
     
     <div class='row'>
-      <div class='col s12' *ngFor="let form of forms">
-        <b></b>&nbsp;{{ form.ApplicantInfo.name }}
+      <div class='col s12' *ngFor="let form of forms" style="border-bottom: 1px solid #EEE">
+        <br><br>
+        <b>Name : </b>&nbsp;{{ form.ApplicantInfo.name }}<br><br><b>Email : </b>&nbsp;{{ form.ApplicantInfo.email }}<br>
+        <br><b>Telephone : </b>&nbsp;{{ form.ApplicantInfo.phone }}<br><br><b>Address : </b>&nbsp;{{ form.ApplicantInfo.address.street }}<br><br>
+        &nbsp;{{ form.ApplicantInfo.address.city }},&nbsp;{{ form.ApplicantInfo.address.state }},&nbsp;{{ form.ApplicantInfo.address.postcode }}<br><br><br>
       </div>
     </div>
 

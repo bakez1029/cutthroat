@@ -1,81 +1,146 @@
+<style>
+	body {
+		margin: 100px 0 0 0;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	ul {
+		position: relative;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		width: 100px;
+		height: 50px;
+		-webkit-perspective: 200;
+		-webkit-transform-style: preserve-3d;
+		-moz-perspective: 200;
+		-moz-transform-style: preserve-3d;
+		perspective: 200;
+		transform-style: preserve-3d;
+	}
+	
+	li {
+		background: silver;
+        position: absolute;
+		width: 100px;
+		height: 50px;
+		transform-origin: center;
+		transform: translate(0, -100px) rotateY(0);
+		animation: rotate 1s linear infinite;
+	}
+	
+	li:nth-child(2) {
+		background: black;
+		animation-delay: .25s;
+	}
+	
+	li:nth-child(3) {
+		background: #DB2226;
+		animation-delay: .5s;
+	}
+	
+	li:nth-child(4) {
+		background: brown;
+		animation-delay: .75s;
+	}
+	
+	@keyframes rotate {
+		0 {
+			transform: translate(0, -100px) rotateY(0);
+		}
+		100% {
+			transform: translate(0, -100px) rotateY(180deg);
+		}
+	}
+</style>
+
+
+
+
 <div>
-      <div>
-    <div style="padding-left:10px; padding-right:10px; padding-top:20px">
+	<div>
+		<div style="padding-left:10px; padding-right:10px; padding-top:20px">
+
+			<div class='panel panel-primary center-block img-responsive' style="height: 100%; width:1244px">
+				<div class='panel-heading'>
+					<center>{{pageTitle}}</center>
+				</div>
+				<br>
 
 
- <h1><center>You have no items in your cart!!</center></h1>
-<br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+
+
+
+				<div *ngIf=cartItems>
+
+					<br>
+					<br>
+                    <br>
+					<div class="input-append">
+          <!-- use type=tel instead of number to prevent spinners -->
+          <input
+            class="span3 text-center" type="tel" 
+            ng-model="item.quantity" ng-change="cart.saveItems()" />
+          <button 
+            class="btn btn-success" type="button" 
+            ng-disabled="item.quantity >= 1000"
+            ng-click="cart.addItem(item.sku, item.name, item.price, +1)">+
+          </button>
+          <button 
+            class="btn btn-inverse" type="button" 
+            ng-disabled="item.quantity <= 1"
+            ng-click="cart.addItem(item.sku, item.name, item.price, -1)">-
+          </button>
         </div>
-    </div>
+					<br>
+                    <br>
+					<br><br>
+                    <br>
+
+					<ul style="padding-left: 20px">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<div class="container">
+						<div class="row" *ngFor="let product of cartItems">
+							<item-preview [IProduct]="product"></item-preview>
+						</div>
+					</div>
+					<!--<div class="container">
+                <div class="row">
+                    <input type="text" #input/>
+                    <button (click)="setDiscount(input.value)">Apply discount</button>
+                </div>
+            </div>
+     -->
+					<div class="container" *ngIf="paymentOutput">
+						<div class="row">
+							<!--{{paymentOutput}}-->
+						</div>
+					</div>
+				</div>
+				<div class='panel-footer' style="height:55px">
+					<span style="float:left; padding-top:8px">Code: </span>&nbsp;<input type="text" #input style="width:120px; height:30px"
+					/>&nbsp;&nbsp;&nbsp;<button style="height:35px" (click)="setDiscount(input.value)">Apply discount</button>
+					<a class='mat-btn waves-effect waves-light red darken-3' (click)='onPay()' style='width:180px; color: white !important; float:right'>Checkout</a>					<span style="float:right; padding-top:8px"> Total: ${{cartService.getTotalPrice()}}.00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<br>
+					<br>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+		</div>
+
+	</div>
+
 </div>

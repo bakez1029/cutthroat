@@ -32,55 +32,61 @@
 <div>
   <div>
     <div style="padding-left:10px; padding-right:10px">
-       
- <br>
-        <br>
- 
+
+      <br>
+      <br>
+
       <center>
         <div class="container">
           <div class="z-depth-1 white lighten-4 row" style="display: inline-block; padding: 32px 48px 32px 48px; border: 1px solid #EEE;">
 
-
             <center>
-              <!--<img class="responsive-img" style="width: 250px;" src="./img/logo2.png" />-->
-
 
               <h5 class="red-darken-4-text">Please, login to your account</h5>
               <br>
               <br>
+              <form (keydown)="keyDownFunction($event, l_email.value, l_password.value)">
+
               <div class='row'>
                 <div class='input-field col s12'>
                   <input class='validate' type='text' #l_email />
-                  <label for='email'>Enter your email</label>
+                  <label for='email' style="padding-right:15px">Enter your email</label>
                 </div>
               </div>
 
               <div class='row'>
                 <div class='input-field col s12'>
                   <input class='validate' type='password' #l_password />
-                  <label for='password'>Enter your password</label>
+                  <label for='password' style="padding-right:15px">Enter your password</label>
                 </div>
               </div>
-      
-              <!--<input type="checkbox" id="indeterminate-checkbox" />
+                 </form>
+            </center>
+            <!--<input type="checkbox" id="indeterminate-checkbox" />
               <label for="indeterminate-checkbox"><a class='grey-text' href='#!'><b>Remember me</b></a></label>-->
-              <!--<label style='float: right;'>
+            <!--<label style='float: right;'>
 								<a class='blue-text' href='#!'><b>Forgot Password?</b></a>
 							</label>-->
-              <br />
-           
-              <div class='row'>
-                <button (click)="login(l_email.value, l_password.value)" class='col s12 mat-btn mat-btn-large waves-effect' style="background-color:#DB2226">Login</button>
-              </div>
-              <br>
-              <div class='row'>
-                <a [routerLink]="['/create']" style="color:#000">Create Account</a>&nbsp;&nbsp;
-                <!--<p style="border-left:medium #000 solid; height:25px"></p>-->
-                <a [routerLink]="['/forgot']" style="color:#000">Forgot Password</a>
-              </div>
-            </center>
+            <br />
+
+            <div class='row'>
+            <button (click)="login(l_email.value, l_password.value)" class='col s12 mat-btn mat-btn-large waves-effect' style="background-color:#DB2226">Submit</button>
+
+             
+ 
+
+            </div>
+            
+            <br>
+            <div class='row'>
+              <a [routerLink]="['/create']" style="color:#000">Create Account</a>&nbsp;&nbsp;
+              <!--<p style="border-left:medium #000 solid; height:25px"></p>-->
+              <a [routerLink]="['/forgot']" style="color:#000">Forgot Password</a>
+            </div>
+
           </div>
         </div>
+    
       </center>
 
 
@@ -100,10 +106,9 @@
       <br>
       <br>
       <br>
-   
+
 
     </div>
   </div>
 </div>
-
 

@@ -58,6 +58,15 @@ export class LoginComponent {
 
   }
 
+keyDownFunction(event, email: string, password: string) {
+  if(event.keyCode == 13) {
+    this.af.auth.login({ email: email, password: password, provider: AuthProviders.Password });
+    this.router.navigate(['/']);
+    // rest of your code
+  }
+}
+
+
   slogout() {
     if (this.af.auth.logout = null) {
       return "You are Logged Out!";

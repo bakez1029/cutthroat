@@ -1,88 +1,81 @@
-import { Component } from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable, AuthProviders, AuthMethods } from 'angularfire2';
-import {FirebaseAuth} from 'angularfire2';
+import { FirebaseAuth } from 'angularfire2';
 import { Subject } from 'rxjs/Subject';
-import {Router} from '@angular/router';
-
+import { Router, ActivatedRoute} from '@angular/router';
+import { FORM_DIRECTIVES } from "@angular/common";
+import { IProduct } from "./product";
+import { ProductService } from "./product.service";
+import { CartService } from "./cart.service";
+import { ItemPreviewComponent } from "./item-preview.component";
+import { DefaultCheckout } from "./checkout.service";
+// import {paymentMethods} from "./Mock/payment-methods.mock.json";
+import { ICheckoutType } from "./checkout.service";
 
 @Component({
     templateUrl: 'app/products/cart.component.html',
-    directives: [ROUTER_DIRECTIVES],
-    providers: [HTTP_PROVIDERS]
+    directives: [ROUTER_DIRECTIVES, ItemPreviewComponent, FORM_DIRECTIVES],
+    providers: [HTTP_PROVIDERS, DefaultCheckout]
 })
 
 export class CartComponent {
-    title = 'Firebase Testing';
+    pageTitle: string = 'Cart';
+    private cartItems: IProduct[] = [];
+    private paymentOutput: string = "";
     email: string;
     password: string;
     items: FirebaseListObservable<any>;
+    products: IProduct[];
+    errorMessage: string;
+    productName: string = '';
+    productBrand: string = '';
+    product: IProduct;
+    productId: number = 0;
+    productPrice: number = 0;
+    releaseDate: string = '';
+    description: string = '';
+    imageUrl: string = '';
+    paramsSub: any;
 
     constructor(public af: AngularFire,
         private _auth: FirebaseAuth,
-        private _router: Router
+        private _router: Router,
+        private cartService: CartService,
+        private productService: ProductService,
+        private route: ActivatedRoute,
+        private defaultCheckout: DefaultCheckout
     ) {
-        this.items = af.database.list('/users');
-        this.email,
-            this.password
+        this.cartItems = cartService.getCart();
+        console.log(this.cartItems, "CART ITEMS")
 
     }
-
-    public loginWithGoogle() {
-        // This will perform popup auth with google oauth and the scope will be email
-        // Because those options were provided through bootstrap to DI, and we're overriding the provider.
-        this._auth.login({
-            provider: AuthProviders.Google
-        })
+    // setPaymentType(type:string){
+    //     this.defaultCheckout.checkOutType = paymentMethods.filter(paymentMethod=>paymentMethod.name.toLowerCase()===type.toLowerCase())[0];
+    // }
+    // setDiscount(name:string){
+    //     this.cartService.applyDiscount(name);
+    // }
+    pay() {
+        this.paymentOutput = this.defaultCheckout.checkOut(this.cartService.getTotalPrice());
     }
 
     public login(email: string, password: string) {
-        console.log(email, password);
         this._auth.login({
             email: email, password: password,
             provider: AuthProviders.Password
         }),
             this._router.navigate(['/'])
-            
-
-
 
     }
 
-
-    //   registerUser(email: string, password: string, cpassword: string) {
-    //     console.log(email, password, cpassword)
-    //     if (password === cpassword) {
-    //        this._auth.createUser({email: email, password: password}) 
-
-    //     }
-    //     else {
-    //       console.log("Invalid passwords");
-    //     }
-
-    //   }
-    public logout() {
-        this._auth.logout()
-    }
-    public loggedIn() {
-        if (!this.af.auth.subscribe) {
-
-            alert("You are not logged in!")
-        }
+    ngOnInit() {
+           
     }
 
-
-    // update(key: string, newSize: string) {
-    //   this.items.update(key, { size: newSize });
-    // }
-
-    // deleteItem(key: string) {
-    //   this.items.remove(key);
-    // }
-    // deleteEverything() {
-    //   this.items.remove();
-    // }
-
+    onPay(): void {
+        this._router.navigate(['/payment']);
+    }
 
 }
